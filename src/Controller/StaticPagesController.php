@@ -13,6 +13,6 @@ class StaticPagesController extends AbstractController
      */
     public function index(): Response
     {
-        return $this->render('StaticView/index.html.twig');
+        return $this->render('static/index.html.twig');
     }
 }

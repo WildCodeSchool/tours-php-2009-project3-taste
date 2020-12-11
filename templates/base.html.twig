@@ -3,20 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <link rel="icon" type="image/png" href="{{ asset('build/images/favicon.png') }}" />
-    <title>{% block title %}Taste{% endblock %}</title>
+    <title>{% block title %}{% endblock %}</title>
     {% block stylesheets %}
         {{ encore_entry_link_tags('app') }}
     {% endblock %}
 </head>
     <body>
 
-    {% block header %}
-    {% endblock %}
-
     {% block body %}
-    {% endblock %}
-
-    {% block footer %}
     {% endblock %}
 
     {% block javascripts %}

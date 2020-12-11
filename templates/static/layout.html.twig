@@ -1,21 +1,67 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{% endblock %}
-
-{% block header %}
+{% block body %}
 <header>
     <div class="image-title-home">
-        {% include '_nav.html.twig' %}
+        <nav class="nav">
+            <a href="#">Carte</a>
+            <a href="#">Traiteur</a>
+            <a href="#">Partenaire</a>
+            <a href="{{ path('index') }}">🏠</a>
+            <a href="#">News</a>
+            <a href="#">Contact</a>
+            <a href="#">Connexion</a>
+        </nav>
         {% block headerTitle %}{% endblock %}
     </div>
     <hr>
 </header>
-{% endblock %}
-
-{% block body %}
-    {% block main %}{% endblock %}
-{% endblock %}
-
-{% block footer %}
-    {% include '_footer.html.twig' %}
+<main>
+{% block main %}{% endblock %}
+</main>
+<footer class="footer">
+    <div class="grid-footer">
+        <div class="maps-footer">
+            <iframe width="300" height="300"
+                    src="https://www.openstreetmap.org/export/embed.html?bbox=0.6830728054046631%2C47.39461986765829%2C0.6848564743995668%2C47.39533071262988&amp;layer=transportmap&amp;marker=47.39497529134273%2C0.6839646399021149"
+                    style="border: 1px solid black">
+            </iframe>
+        </div>
+        <div class="info-footer">
+            <h1>Coordonnées</h1>
+            <div class="adress-info">
+                <span>🏠</span>
+                <p>55, Rue du commerce, 37000 Tours</p>
+            </div>
+            <hr>
+            <div class="tel-info">
+                <span>📞</span>
+                <p> 06.00.00.00.00</p>
+            </div>
+            <hr>
+            <div class="hours-info">
+                <span>🕦</span>
+                <p>Lundi au Vendredi<br>10h30 à 21h00</p>
+            </div>
+        </div>
+        <div class="social-footer">
+            <h1>Réseaux</h1>
+            <div class="link-footer">
+                <a href="#">fb</a>
+                <a href="#">insta</a>
+            </div>
+        </div>
+        <div class="summary-footer">
+            <h1>Sommaire</h1>
+            <a href="#">- Accueil - </a>
+            <a href="#">- Carte -</a>
+            <a href="#">- Traiteur -</a>
+            <a href="#">- Partenaire -</a>
+            <a href="#">- News -</a>
+            <a href="#">- Contact -</a>
+            <a href="#">- Connexion -</a>
+        </div>
+    </div>
+    <p class="copyrigth">Copyrigth 2020 Wild Code School - Mentions Légales - FAQ - Protection de la vie privée</p>
+</footer>
 {% endblock %}

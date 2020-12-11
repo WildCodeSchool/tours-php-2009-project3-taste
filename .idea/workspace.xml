@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0e48127b-65d3-4b09-99d1-d77263e73502" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/templates/FAQ-CGU/cgu.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/FAQ-CGU/cgu.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/FAQ-CGU/faq.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/FAQ-CGU/faq.html.twig" afterDir="false" />
-    </list>
+    <list default="true" id="0e48127b-65d3-4b09-99d1-d77263e73502" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -209,7 +206,7 @@
       <updated>1607501876640</updated>
       <workItem from="1607501880803" duration="5676000" />
       <workItem from="1607588614657" duration="8262000" />
-      <workItem from="1607676509776" duration="4981000" />
+      <workItem from="1607676509776" duration="5377000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1607503262172</created>

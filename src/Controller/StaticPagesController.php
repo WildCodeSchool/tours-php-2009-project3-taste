@@ -6,14 +6,20 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class HomeController extends AbstractController
+/**
+ * This class is used to display all static views
+ * @package App\Controller
+ */
+class StaticPagesController extends AbstractController
 {
     /**
-     * @Route("/", name="home")
+     * This method is used to display the home page
+     * @return Response
+     * @Route("/", name="index")
      */
     public function index(): Response
     {
-        return $this->render('home/index.html.twig');
+        return $this->render('static/index.html.twig');
     }
     /**
      * @Route("/FAQ", name="FAQ")

@@ -1,8 +1,12 @@
-{% extends 'base.html.twig' %}
+{% extends 'static/layout.html.twig' %}
 
 {% block title %} FAQ {% endblock %}
 
-{% block body %}
+{% block stylesheets %}
+    <link href="{{ 'style/faq.css' }}" rel="stylesheet">
+{% endblock %}
+
+{% block main %}
     <h1> Foire aux questions </h1>
 
     <h2> Qu'est ce que c'est ? </h2>

@@ -7,11 +7,7 @@
 /public/bundles/
 /var/
 /vendor/
-<<<<<<< HEAD
-/.id/
-=======
 .idea/
->>>>>>> 36bd04efd9eb6f89299a782c5cff923f77e36b36
 ###< symfony/framework-bundle ###
 
 ###> symfony/phpunit-bridge ###

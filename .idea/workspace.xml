@@ -2,16 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0e48127b-65d3-4b09-99d1-d77263e73502" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/style/cgu.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/styles/cgu.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/styles/faq.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/style/faq.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/styles/variables.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/style/variables.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sass-linter.yml" beforeDir="false" afterPath="$PROJECT_DIR$/sass-linter.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/StaticPagesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/StaticPagesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/FAQ-CGU/cgu.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/static/cgu.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/FAQ-CGU/faq.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/static/faq.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -224,7 +216,7 @@
       <workItem from="1607588614657" duration="8262000" />
       <workItem from="1607676509776" duration="6296000" />
       <workItem from="1607938074411" duration="9000" />
-      <workItem from="1608038732873" duration="5586000" />
+      <workItem from="1608038732873" duration="6336000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1607503262172</created>

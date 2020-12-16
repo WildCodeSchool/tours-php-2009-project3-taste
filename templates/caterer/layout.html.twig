@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <header>
+        <div class="image-title-home">
+            <nav class="nav">
+                <a href="#">Carte</a>
+                <a href="#">Traiteur</a>
+                <a href="#">Partenaire</a>
+                <a href="{{ path('index') }}">🏠</a>
+                <a href="#">News</a>
+                <a href="#">Contact</a>
+                <a href="#">Connexion</a>
+            </nav>
+            {% block headerTitle %}{% endblock %}
+        </div>
+        <hr>
+    </header>
+    <main>
+        {% block main %}{% endblock %}
+    </main>
+{% endblock %}

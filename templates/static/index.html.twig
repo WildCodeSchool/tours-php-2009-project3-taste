@@ -1,43 +1,45 @@
 {% extends 'static/layout.html.twig' %}
 
+{% block stylesheets %}
+    <link href="{{ 'style/home.css' }}" rel="stylesheet">
+    <link href="{{ 'style/footer.css' }}" rel="stylesheet">
+    <link href="{{ 'style/nav.css' }}" rel="stylesheet">
+{% endblock %}
 {% block title %}Taste - Accueil{% endblock %}
 
 {% block headerTitle %}
-<div class="background-title-home">
+<div class="home-title">
     <h1>Taste</h1>
-    <h2>Fast Good !</h2>
+    <h2>Restaurant - Artisan Traiteur Touraine</h2>
 </div>
 {% endblock %}
 {% block main %}
-<h1>Nos Services</h1>
-<hr>
-<div class="image-1-home">
-    <div class="text-1-home">
+<h1 class="service">Nos Services</h1>
+<div class="image-1">
+    <div class="text-1">
         <p>
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto, nesciunt.
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto, nesciunt.
         </p>
-        <a href="#">A propos de nous</a>
+        <a href="#" class="about-us">A propos de nous</a>
     </div>
 </div>
-<hr>
-<div class="image-2-home">
-    <div class="text-2-home">
+<div class="image-2">
+    <div class="text-2">
         <p>
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto, nesciunt.
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto, nesciunt.
         </p>
-        <a href="#">Nos Cartes</a>
+        <a href="#" class="about-us">Nos Cartes</a>
     </div>
 </div>
-<hr>
-<div class="image-3-home">
-    <div class="text-3-home">
+<div class="image-3">
+    <div class="text-3">
         <p>
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto, nesciunt.
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto, nesciunt.
         </p>
-        <a href="#">Nos Cartes</a>
+        <a href="#" class="about-us">Traiteur</a>
     </div>
 </div>
 {% endblock %}

@@ -1,0 +1,26 @@
+@import 'variables.css';
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.nav {
+    display: flex;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    justify-content: space-evenly;
+    z-index: 100;
+    align-items: center;
+    height: 74px;
+    font-size: 24px;
+    background-color: var(--nav-background-color);
+}
+
+.nav a {
+    text-decoration: none;
+    color: var(--color-title-header);
+}

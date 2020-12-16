@@ -22,5 +22,3 @@ class StaticPagesController extends AbstractController
         return $this->render('static/index.html.twig');
     }
 }
-
-

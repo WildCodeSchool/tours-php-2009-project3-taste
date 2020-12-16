@@ -21,4 +21,21 @@ class StaticPagesController extends AbstractController
     {
         return $this->render('static/index.html.twig');
     }
+    /**
+     * @Route("/FAQ", name="FAQ")
+     * @return Response
+     */
+    public function indexFaq(): Response
+    {
+        return $this->render('static/faq.html.twig');
+    }
+
+    /**
+     * @Route("/CGU", name="CGU")
+     * @return Response
+     */
+    public function indexCgu(): Response
+    {
+        return $this->render('static/cgu.html.twig');
+    }
 }

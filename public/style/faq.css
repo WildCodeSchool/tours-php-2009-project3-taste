@@ -1,0 +1,11 @@
+@import 'variables.css';
+
+.title, .subtitle {
+    text-align: center;
+}
+
+.text {
+    text-align: justify;
+    margin-left: 2em;
+    margin-right: 2em;
+}

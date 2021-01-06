@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\Caterer;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\TelType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
@@ -21,7 +22,10 @@ class CatererType extends AbstractType
             ->add('email', EmailType::class)
             ->add('number', TelType::class)
             ->add('budget', TextType::class)
-            ->add('date', TextType::class)
+            ->add('date', DateType::class, [
+                'widget' => 'single_text',
+                'format' => 'yyyy-MM-dd',
+            ])
             ->add('location', TextType::class)
             ->add('guests', TextType::class)
             ->add('description', TextareaType::class)

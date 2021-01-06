@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\CatererRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=CatererRepository::class)
@@ -43,9 +44,9 @@ class Caterer
     private string $budget;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="date", length=255)
      */
-    private string $date;
+    private \DateTime $date;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -127,12 +128,12 @@ class Caterer
         return $this;
     }
 
-    public function getDate(): ?string
+    public function getDate(): ?\DateTime
     {
         return $this->date;
     }
 
-    public function setDate(string $date): self
+    public function setDate(\DateTime $date): self
     {
         $this->date = $date;
 

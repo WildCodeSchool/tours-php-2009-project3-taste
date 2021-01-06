@@ -46,6 +46,6 @@ class StaticPagesController extends AbstractController
      */
     public function indexPartners(): Response
     {
-        return $this->render('/partners.html.twig');
+        return $this->render('static/partners.html.twig');
     }
 }

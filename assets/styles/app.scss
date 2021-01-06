@@ -1,29 +1,2 @@
-@import 'variables';
 $primary: darken(#428bca, 20%);
 @import "~bootstrap/scss/bootstrap";
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-.background-title-home {
-  background: url('https://via.placeholder.com/2000x450') no-repeat;
-  height: 450px;
-}
-
-.image-1-home {
-  background: url('https://via.placeholder.com/150x1200') no-repeat;
-  height: 150px;
-}
-
-.image-2-home {
-  background: url('https://via.placeholder.com/150x1200') no-repeat;
-  height: 150px;
-}
-
-.image-3-home {
-  background: url('https://via.placeholder.com/150x1200') no-repeat;
-  height: 150px;
-}

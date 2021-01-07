@@ -25,3 +25,125 @@
   background: url('https://via.placeholder.com/150x1200') no-repeat;
   height: 150px;
 }
+* {
+  box-sizing: border-box;
+  /* border: 1px solid black;*/
+}
+body {
+  font-family: 'Lato';
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizelegibility;
+  margin: 0;
+  padding: 0;
+}
+ul {
+  display: flex;
+  min-height: 100vh;
+  max-height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  list-style-type: none;
+}
+li {
+  flex: 1;
+  display: flex;
+  align-items: stretch;
+  background: #e74c3c;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+li:hover {
+  background: #e53f2e;
+}
+li.active {
+  flex: 20;
+  background: #fff;
+  cursor: default;
+}
+li.active h2 {
+  color: #e74c3c;
+}
+li.active .section-content {
+  width: 100%;
+  padding: 0 30px;
+  opacity: 1;
+  transform: scaleX(1);
+  color: #e74c3c;
+}
+li:not(.active) > .section-content    {
+  display: none;
+}
+li {
+  position: relative;
+}
+
+li .section-title {
+  display: block;
+  width: 50px;
+  margin: 0;
+  padding: 0;
+  color: white;
+  font-size: 1.2rem;
+}
+li .section-title h2{
+
+  position: absolute;
+  text-align: center;
+  width: 70vh;
+  top: 50%;
+  left: 25px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  -moz-transform: translateX(-50%) translateY(-50%) rotate(-90deg);
+  -webkit-transform: translateX(-50%) translateY(-50%) rotate(-90deg);
+  transform: translateX(-50%) translateY(-50%) rotate(-90deg);
+}
+li .section-content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  opacity: 0;
+  transition: all 0.25s 0.1s ease-out;
+}
+li .section-content > div{
+  width: 100%;
+  padding: 0 10%;
+}
+
+.product{
+  display: flex;
+  justify-content: space-between;
+}
+
+.product div{
+  margin: 5px 0;
+
+}
+.category-description{
+  margin-top:30px;
+  font-size: 0.80rem;
+}
+.group-name{
+  font-weight: bold;
+  font-size: 1rem;
+
+  width: 100%;
+  margin: 30px 0 10px 0;
+  padding: 5px 0 ;
+}
+.group-description{
+  font-size: 0.8rem;
+}
+.category-range-price{
+  margin: 5px 0;
+}
+.product-ingredients{
+  font-size: 0.6rem;
+  margin-bottom: 0.5rem;
+}

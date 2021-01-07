@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+use App\Entity\Categories;
+use App\Entity\Category;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -37,5 +39,16 @@ class StaticPagesController extends AbstractController
     public function indexCgu(): Response
     {
         return $this->render('static/cgu.html.twig');
+    }
+
+    /**
+     * @Route("/carte", name="carte")
+     * @return Response
+     */
+    public function carteMenu(): Response
+    {
+        $repository = $this->getDoctrine()->getRepository(Category::class);
+        $categories = $repository->findWithProducts();
+        return $this->render('static/carte.html.twig', ['categories' => $categories]);
     }
 }

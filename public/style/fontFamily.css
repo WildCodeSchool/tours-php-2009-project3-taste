@@ -1,2 +1,5 @@
 /* INCONSOLATA */
-@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400&display=swap');
+@font-face {
+    font-family: 'Inconsolata';
+    src: url('/fonts/Inconsolata-Medium.ttf');
+   }

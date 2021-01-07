@@ -35,3 +35,7 @@ p {
     text-align: center;
     align-self: center;
 }
+
+.name {
+    width: 50%;
+}

@@ -17,18 +17,35 @@ class CatererType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('lastname', TextType::class)
-            ->add('firstname', TextType::class)
-            ->add('email', EmailType::class)
-            ->add('number', TelType::class)
-            ->add('budget', TextType::class)
+            ->add('lastname', TextType::class, [
+                'label' => 'Nom',
+                'attr' => ['class' => 'name']
+            ])
+            ->add('firstname', TextType::class, [
+                'label' => 'Prénom'
+            ])
+            ->add('email', EmailType::class, [
+                'label' => 'Email'
+            ])
+            ->add('number', TelType::class, [
+                'label' => 'Téléphone'
+            ])
+            ->add('budget', TextType::class, [
+                'label' => 'Budget'
+            ])
             ->add('date', DateType::class, [
                 'widget' => 'single_text',
                 'format' => 'yyyy-MM-dd',
             ])
-            ->add('location', TextType::class)
-            ->add('guests', TextType::class)
-            ->add('description', TextareaType::class)
+            ->add('location', TextType::class, [
+                'label' => 'Localisation'
+            ])
+            ->add('guests', TextType::class, [
+                'label' => 'Nombre d\'invités'
+            ])
+            ->add('description', TextareaType::class, [
+                'label' => 'Description de l\'évenement'
+            ])
         ;
     }
 

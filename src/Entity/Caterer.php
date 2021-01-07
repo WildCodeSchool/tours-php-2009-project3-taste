@@ -20,46 +20,63 @@ class Caterer
 
     /**
      * @ORM\Column(type="string", length=100)
+     * @Assert\NotBlank(message="Votre nom ne peux pas être vide")
+     * @Assert\Length(max="100", maxMessage="Votre nom ne peut pas dépasser 100 caractères")
      */
     private string $lastname;
 
     /**
      * @ORM\Column(type="string", length=100)
+     * @Assert\NotBlank(message="Votre prénom ne peux pas être vide")
+     * @Assert\Length(max="100", maxMessage="Votre prénom ne peut pas dépasser 100 caractères")
      */
     private string $firstname;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank(message="Votre ne Email ne peut pas être vide")
+     * @Assert\Email(
+     *     message="L'addresse mail '{{ value }}' n'est pas valide"
+     * )
      */
     private string $email;
 
     /**
      * @ORM\Column(type="string", length=15)
+     * @Assert\NotBlank(message="Numéro de téléphone ne peut pas être vide")
+     * @Assert\Length(max="15", maxMessage="Le numéro ne peut pas excéder 15 chiffres")
      */
     private string $number;
 
     /**
      * @ORM\Column(type="string", length=150)
+     * @Assert\NotBlank(message="Votre budget ne peut pas être vide")
+     * @Assert\Length (max="150", maxMessage="Votre budget ne peut excèder 150 caractères")
      */
     private string $budget;
 
     /**
      * @ORM\Column(type="date", length=255)
+     * @Assert\Type("\DateTimeInterface")
      */
     private \DateTime $date;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank(message="La localisation ne peut pas être vide")
+     * @Assert\Length(max="255", maxMessage="La localisation ne peut pas excéder 255 caractères")
      */
     private string $location;
 
     /**
      * @ORM\Column(type="string", length=100)
+     * @Assert\NotBlank(message="Le nombre de personnes ne peut pas être vide")
      */
     private string $guests;
 
     /**
      * @ORM\Column(type="text")
+     * @Assert\Length(min="20", minMessage="La description doit être supérieur à 20 caractères")
      */
     private string $description;
 

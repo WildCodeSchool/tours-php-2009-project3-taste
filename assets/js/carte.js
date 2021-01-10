@@ -1,3 +1,5 @@
+import $ from 'jquery';
+
 const section = $('li');
 
 function toggleAccordion() {

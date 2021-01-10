@@ -2,9 +2,6 @@
 
 namespace App\Controller;
 
-use App\Entity\Categories;
-use App\Entity\Category;
-use App\Repository\CategoryRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -43,14 +40,12 @@ class StaticPagesController extends AbstractController
     }
 
     /**
-     * @Route("/carte", name="carte")
+     * This method is used to display the partner page
+     * @Route("/partners", name="partners")
      * @return Response
      */
-    public function carteMenu(): Response
+    public function indexPartners(): Response
     {
-        /** @var CategoryRepository $repository */
-        $repository = $this->getDoctrine()->getRepository(Category::class);
-        $categories = $repository->findWithProducts();
-        return $this->render('static/carte.html.twig', ['categories' => $categories]);
+        return $this->render('static/partners.html.twig');
     }
 }

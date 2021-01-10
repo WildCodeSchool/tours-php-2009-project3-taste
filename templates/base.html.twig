@@ -2,8 +2,10 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>{% block title %} TASTE !{% endblock %}</title>
+    <link rel="icon" type="image/png" href="{{ 'images/favicon-16x16.png' }}" />
+    <title>{% block title %}{% endblock %}</title>
     {% block stylesheets %}{% endblock %}
+
 </head>
     <body>
     {% block body %}
@@ -12,5 +14,6 @@
 
     {% block javascripts %} {{ encore_entry_script_tags ("app") }}
     {% endblock %}
+
     </body>
 </html>

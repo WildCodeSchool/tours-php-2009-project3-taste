@@ -1,0 +1,67 @@
+{% extends "static/layout.html.twig" %}
+
+{% block stylesheets %}
+    <link href="{{ 'style/carte.css' }}" rel="stylesheet">
+    {{ encore_entry_link_tags('app') }}
+{% endblock %}
+
+{% block main %}
+    <ul>
+        {% for category in categories %}
+            <li>
+
+
+                <div class="section-title">
+                    <h2>{{ category.name }}{% if category.description != null %}*{% endif %}</h2>
+                </div>
+                <div class="section-content">
+                    <div>
+                        {% if category.products|length == 0 and category.minPrice != null and category.maxPrice != null %}
+                            <div class="category-range-price">entre {{ category.minPrice }} € et {{ category.maxPrice }}
+                                €
+                            </div>
+                        {% else %}
+
+                            {% set groupName = "" %}
+
+                            {% for product in category.products %}
+                                {% if groupName != product.groupName %}
+                                    {% set groupName = product.groupName %}
+                                    <div class="group-name">
+                                        <span>{{ groupName }}</span>
+                                        {% if product.groupDescription != "" %}
+                                            <span class="group-description"> - {{ product.groupDescription }}</span>
+                                        {% endif %}
+                                    </div>
+                                {% endif %}
+                                <div class="product">
+                                    <div>{{ product.name }}</div>
+
+                                    <div>{{ product.price }} €</div>
+                                </div>
+                                {% if product.ingredients != "" %}
+                                    <div class="product-ingredients">{{ product.ingredients }}</div>
+                                {% endif %}
+
+                            {% endfor %}
+
+
+
+                        {% endif %}
+                        {% if category.description != "" %}
+                            <p class="category-description">*{{ category.description }}</p>
+                        {% endif %}
+                    </div>
+                </div>
+
+
+            </li>
+        {% endfor %}
+
+    </ul>
+{% endblock %}
+
+ {% block javascripts %}
+     {{ parent() }}
+     {{ encore_entry_script_tags('carte') }}
+ {% endblock %}

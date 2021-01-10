@@ -3,7 +3,7 @@
 {% block body %}
     {% block menu %} {% endblock %}
 <header>
-    <div class="image-title-home">
+    <div class="image-title">
         <nav class="nav">
             <a href="{{ path('carte') }}">Carte</a>
             <a href="#">Traiteur</a>
@@ -20,49 +20,32 @@
 <main>
 {% block main %}{% endblock %}
 </main>
-<footer class="footer">
-    <div class="grid-footer">
-        <div class="maps-footer">
-            <iframe width="300" height="300"
-                    src="https://www.openstreetmap.org/export/embed.html?bbox=0.6830728054046631%2C47.39461986765829%2C0.6848564743995668%2C47.39533071262988&amp;layer=transportmap&amp;marker=47.39497529134273%2C0.6839646399021149"
-                    style="border: 1px solid black">
-            </iframe>
-        </div>
-        <div class="info-footer">
-            <h1>Coordonnées</h1>
-            <div class="adress-info">
-                <span>🏠</span>
-                <p>55, Rue du commerce, 37000 Tours</p>
-            </div>
-            <hr>
-            <div class="tel-info">
-                <span>📞</span>
-                <p> 06.00.00.00.00</p>
-            </div>
-            <hr>
-            <div class="hours-info">
-                <span>🕦</span>
-                <p>Lundi au Vendredi<br>10h30 à 21h00</p>
-            </div>
-        </div>
-        <div class="social-footer">
-            <h1>Réseaux</h1>
-            <div class="link-footer">
-                <a href="#">fb</a>
-                <a href="#">insta</a>
-            </div>
-        </div>
-        <div class="summary-footer">
-            <h1>Sommaire</h1>
-            <a href="#">- Accueil - </a>
-            <a href="#">- Carte -</a>
-            <a href="#">- Traiteur -</a>
-            <a href="#">- Partenaire -</a>
-            <a href="#">- News -</a>
-            <a href="#">- Contact -</a>
-            <a href="#">- Connexion -</a>
-        </div>
+<footer class="contenuFooter">
+    <div class="bloc footerSommaire">
+        <ul class="listPages">
+            <li>
+                <iframe width="200" height="200"
+                        src="https://www.openstreetmap.org/export/embed.html?bbox=0.6825135027793295%2C47.3942452046221%2C0.6854102885154135%2C47.39569413015929&amp;layer=transportmap&amp;marker=47.39496967237069%2C0.6839618956473714">
+                </iframe>
+            </li>
+        </ul>
     </div>
-    <p class="copyrigth">Copyrigth 2020 Wild Code School - Mentions Légales - FAQ - Protection de la vie privée</p>
+    <div class="bloc footerContact">
+        <h3>Restons en Contact</h3>
+        <p>06 00 00 00 00</p>
+        <p>4 rue des Wilders, Tours, 37000</p>
+        <p>Lundi au Vendredi 10h30 à 21h00</p>
+    </div>
+    <div class="bloc footerSociaux">
+        <h3>Nos Réseaux</h3>
+        <ul class="listSociaux">
+            <li>
+                <a href="#"><img src="../images/insta" alt="icone réseaux sociaux"></a>
+            </li>
+            <li>
+                <a href="#"><img src="../images/facebook" alt="icone réseaux sociaux"></a>
+            </li>
+        </ul>
+    </div>
 </footer>
 {% endblock %}

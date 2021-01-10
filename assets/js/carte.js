@@ -1,5 +1,4 @@
-import $ from 'jquery';
-var section = $('li');
+const section = $('li');
 
 function toggleAccordion() {
     section.removeClass('active');

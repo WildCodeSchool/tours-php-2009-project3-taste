@@ -12,35 +12,42 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Category
 {
+
     /**
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
+     * @var integer
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @var string
      */
     private $name;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @var null|string
      */
     private $description;
 
     /**
      * @ORM\Column(type="decimal", precision=10, scale=2, nullable=true)
+     * @var string|null
      */
     private $minPrice;
 
     /**
      * @ORM\Column(type="decimal", precision=10, scale=2, nullable=true)
+     * @var string|null
      */
     private $maxPrice;
 
     /**
      * @ORM\OneToMany(targetEntity=Product::class, mappedBy="category")
+     * @var ArrayCollection
      */
     private $products;
 

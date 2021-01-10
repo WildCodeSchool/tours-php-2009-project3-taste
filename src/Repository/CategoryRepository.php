@@ -19,6 +19,9 @@ class CategoryRepository extends ServiceEntityRepository
         parent::__construct($registry, Category::class);
     }
 
+    /**
+     * @return int|mixed|string
+     */
     public function findWithProducts()
     {
         $qb = $this->createQueryBuilder('c')

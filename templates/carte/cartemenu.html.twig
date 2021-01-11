@@ -1,14 +1,16 @@
-{% extends "static/layout.html.twig" %}
+{% extends 'carte/layout.html.twig' %}
 
 {% block stylesheets %}
     <link href="{{ 'style/carte.css' }}" rel="stylesheet">
+    <link href="{{ 'style/footer.css' }}" rel="stylesheet">
+    <link href="{{ 'style/nav.css' }}" rel="stylesheet">
     {{ encore_entry_link_tags('app') }}
 {% endblock %}
 
 {% block main %}
-    <ul>
+    <ul class="carte-list">
         {% for category in categories %}
-            <li>
+            <li class="carte">
 
 
                 <div class="section-title">

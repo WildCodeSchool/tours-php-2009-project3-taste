@@ -13,12 +13,12 @@ class CarteController extends AbstractController
     /**
      * @Route("/carte", name="carte")
      */
-    public function index(): Response
+    public function carteMenu(): Response
     {
         /** @var CategoryRepository $repository */
         $repository = $this->getDoctrine()->getRepository(Category::class);
         $categories = $repository->findWithProducts();
 
-        return $this->render('carte/index.html.twig', ['categories' => $categories]);
+        return $this->render('carte/cartemenu.html.twig', ['categories' => $categories]);
     }
 }

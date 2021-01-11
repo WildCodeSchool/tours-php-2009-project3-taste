@@ -14,6 +14,7 @@ body {
     text-rendering: optimizelegibility;
     margin: 0;
     padding: 0;
+    background-color:black!important;
 }
 
 ul {
@@ -26,7 +27,7 @@ ul {
     list-style-type: none;
 }
 
-li {
+li.carte  {
     flex: 1;
     display: flex;
     align-items: stretch;
@@ -35,21 +36,21 @@ li {
     transition: all 0.5s ease;
 }
 
-li:hover {
+li.carte:hover {
     background: #e53f2e;
 }
 
-li.active {
+li.carte.active {
     flex: 20;
     background: #fff;
     cursor: default;
 }
 
-li.active h2 {
+li.carte.active h2 {
     color: #e74c3c;
 }
 
-li.active .section-content {
+li.carte.active .section-content {
     width: 100%;
     padding: 0 30px;
     opacity: 1;
@@ -61,11 +62,11 @@ li:not(.active) > .section-content {
     display: none;
 }
 
-li {
+li.carte  {
     position: relative;
 }
 
-li .section-title {
+li.carte  .section-title {
     display: block;
     width: 50px;
     margin: 0;
@@ -74,7 +75,7 @@ li .section-title {
     font-size: 1.2rem;
 }
 
-li .section-title h2 {
+li.carte  .section-title h2 {
 
     position: absolute;
     text-align: center;
@@ -141,3 +142,6 @@ li .section-content > div {
     margin-bottom: 0.5rem;
 }
 
+.carte-list{
+    margin-top: 56px;
+}

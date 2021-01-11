@@ -1,5 +1,4 @@
-import $ from 'jquery';
-
+/* global $ */
 const section = $('li');
 
 function toggleAccordion() {

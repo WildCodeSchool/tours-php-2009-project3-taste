@@ -38,4 +38,14 @@ class StaticPagesController extends AbstractController
     {
         return $this->render('static/cgu.html.twig');
     }
+
+    /**
+     * This method is used to display the partner page
+     * @Route("/partners", name="partners")
+     * @return Response
+     */
+    public function indexPartners(): Response
+    {
+        return $this->render('static/partners.html.twig');
+    }
 }

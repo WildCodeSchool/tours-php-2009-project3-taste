@@ -1,0 +1,50 @@
+{% extends 'caterer/layout.html.twig' %}
+{% block stylesheets %}
+    <link href="{{ 'style/catererstyle.css' }}" rel="stylesheet">
+    {{ encore_entry_link_tags('app') }}
+{% endblock %}
+
+{% block title %}Artisan Traiteur{% endblock %}
+
+{% block headerTitle %}
+    <div class="background-title-home">
+        <h1 style="">Artisan Traiteur</h1>
+        <h2></h2>
+    </div>
+{% endblock %}
+
+{% block main %}
+    <h2 style="text-align: center">Traiteur</h2>
+    <div class="border-caterer"></div>
+
+    <div class="cocktail-caterer">
+        <img src="https://via.placeholder.com/755x300" alt="place holder">
+        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eros orci, accumsan nec est in,
+            tempor lacinia leo. Sed placerat finibus felis, et efficitur magna euismod a. Sed vitae rhoncus. </p>
+    </div>
+
+    <div class="entree-caterer">
+        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eros orci, accumsan nec est in,
+            tempor lacinia leo. Sed placerat finibus felis, et efficitur magna euismod a. Sed vitae rhoncus. </p>
+        <img src="https://via.placeholder.com/755x300" alt="place holder">
+    </div>
+
+    <div class="plate-caterer">
+        <img src="https://via.placeholder.com/755x300" alt="place holder">
+        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eros orci, accumsan nec est in,
+            tempor lacinia leo. Sed placerat finibus felis, et efficitur magna euismod a. Sed vitae rhoncus. </p>
+    </div>
+
+    <div class="quote-caterer">
+        <h3 class="text-quote-caterer">Demande De Devis</h3>
+    </div>
+
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    <input type='submit' value='Envoyer'>
+    {{ form_end(form) }}
+    {% block javascripts %}
+        {{ encore_entry_script_tags('app') }}
+    {% endblock %}
+{% endblock %}

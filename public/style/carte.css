@@ -14,7 +14,7 @@ body {
     text-rendering: optimizelegibility;
     margin: 0;
     padding: 0;
-    background-color:black!important;
+    background-color:black;
 }
 
 ul {
@@ -85,8 +85,6 @@ li.carte  .section-title h2 {
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
-    -moz-transform: translateX(-50%) translateY(-50%) rotate(-90deg);
-    -webkit-transform: translateX(-50%) translateY(-50%) rotate(-90deg);
     transform: translateX(-50%) translateY(-50%) rotate(-90deg);
 }
 

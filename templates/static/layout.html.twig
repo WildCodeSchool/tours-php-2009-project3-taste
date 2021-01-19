@@ -1,10 +1,11 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+    {% block menu %} {% endblock %}
 <header>
     <div class="image-title">
         <nav class="nav">
-            <a href="#">Carte</a>
+            <a href="{{ path('carte') }}">Carte</a>
             <a href="#">Traiteur</a>
             <a href="#">Partenaire</a>
             <a href="{{ path('index') }}">🏠</a>

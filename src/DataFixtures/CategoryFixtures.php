@@ -25,7 +25,7 @@ class CategoryFixtures extends Fixture
         $category->setDescription($faker->realText(40));
         $category->setMinPrice($faker->randomFloat(3, 2, 15));
         $category->setMaxPrice($faker->randomFloat(3, 2, 15));
-        $this->addReference('category_' . $i, $category);
+        $this->addReference('category_6', $category);
         $manager->persist($category);
 
         $manager->flush();

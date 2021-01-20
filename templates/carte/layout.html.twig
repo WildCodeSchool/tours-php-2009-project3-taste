@@ -5,12 +5,20 @@
         <div class="image-title">
             <nav class="nav">
                 <a href="{{ path('carte') }}">Carte</a>
-                <a href="#">Traiteur</a>
-                <a href="#">Partenaire</a>
+                <a href="{{ path('caterer') }}">Traiteur</a>
+                <a href="{{ path('partners') }}">Partenaire</a>
                 <a href="{{ path('index') }}">🏠</a>
                 <a href="#">News</a>
                 <a href="#">Contact</a>
-                <a href="#">Connexion</a>
+                {% if app.user %}
+
+                    <a href="{{ path('app_logout') }}">  {{ app.user.name }} </a>
+
+                {% else %}
+
+                    <a href="{{ path('app_login') }}"> Se connecter</a>
+
+                {% endif %}
             </nav>
             {% block headerTitle %}{% endblock %}
         </div>

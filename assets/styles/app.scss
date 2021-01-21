@@ -1,6 +1,2 @@
-@import 'variables.scss';
-
-body {
-    background-color: $wild-color;
-    color: $light-color;
-}
+$primary: darken(#428bca, 20%);
+@import "~bootstrap/scss/bootstrap";

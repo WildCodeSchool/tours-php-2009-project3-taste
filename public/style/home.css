@@ -1,0 +1,146 @@
+@import "variables.css";
+@import "fontFamily.css";
+
+/* Image background in header */
+.image-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    background: url('../images/deventure.jpg') no-repeat fixed center;
+    min-height: 850px;
+    background-size: cover;
+}
+
+/* Title in Header */
+.home-title {
+    padding: 100px;
+    text-align: center;
+    font-family: 'Inconsolata', monospace;
+    color: var(--color-title-header);
+    background: var(--title-background-color) fixed center;
+    background-size: cover;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    -webkit-backdrop-filter: blur(2px);
+    z-index: 10;
+}
+
+/* Section "Nos Services" */
+.service {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    color: white;
+}
+
+main {
+    background-color: var(--main-background-color);
+}
+
+/* First Content "A propos de nous" */
+.image-1 {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    background: url('../images/couvertureAccueil.jpg') no-repeat fixed center ;
+    background-size: cover;
+    min-height: 600px;
+    margin-bottom: 90px;
+}
+.text-1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 15px 15px;
+    width: 600px;
+    height: 250px;
+    color: var(--text-color-about-us);
+    background: var(--title-background-color);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    -webkit-backdrop-filter: blur(2px);
+}
+
+.text-1 p, .text-1 a {
+    margin: 10px 20px;
+}
+
+.about-us {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    height: 50px;
+    padding: 10px 70px;
+    background: var(--button-about-us-color);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
+    -webkit-backdrop-filter: blur(2px);
+    text-decoration: none;
+    color: var(--text-color-about-us);
+}
+
+/* Second Content "Carte Restaurant" */
+.image-2 {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    background: url('https://via.placeholder.com/1700x450') no-repeat fixed center ;
+    background-size: cover;
+    height: 400px;
+    margin-bottom: 90px;
+    border: solid 1px black;
+}
+
+.text-2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 15px 15px;
+    width: 600px;
+    height: 250px;
+    color: var(--text-color-about-us);
+    background: var(--title-background-color);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    -webkit-backdrop-filter: blur(2px);
+}
+
+.text-2 p, .text-2 a {
+    margin: 10px 20px;
+}
+
+/* Third Content " Page Traiteur " */
+.image-3 {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    background: url('https://via.placeholder.com/1700x450') no-repeat fixed center ;
+    background-size: cover;
+    height: 400px;
+    border: solid 1px black;
+}
+
+.text-3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 15px 15px;
+    width: 600px;
+    height: 250px;
+    color: var(--text-color-about-us);
+    background: var(--title-background-color);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    -webkit-backdrop-filter: blur(2px);
+}
+
+.text-3 p, .text-3 a {
+    margin: 10px 20px;
+}
+
+.text-1, .text-2, .text-3 {
+    font-family: 'Inconsolata', monospace;
+    font-size: 14px;
+}
+

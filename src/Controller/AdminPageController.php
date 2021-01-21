@@ -68,21 +68,4 @@ class AdminPageController extends AbstractController
             'categories' => $categories
         ]);
     }
-
-    /**
-     * @Route("/{id}", name="product_delete", methods={"DELETE"})
-     * @param Request $request
-     * @param Product $product
-     * @return Response
-     */
-    public function delete(Request $request, Product $product): Response
-    {
-        if ($this->isCsrfTokenValid('delete' . $product->getId(), $request->request->get('_token'))) {
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->remove($product);
-            $entityManager->flush();
-        }
-
-        return $this->redirectToRoute('admin_product');
-    }
 }

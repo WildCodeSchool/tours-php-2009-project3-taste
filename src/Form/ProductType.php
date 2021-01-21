@@ -6,6 +6,8 @@ use App\Entity\Category;
 use App\Entity\Product;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\RadioType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -17,14 +19,20 @@ class ProductType extends AbstractType
             ->add('name')
             ->add('price')
             ->add('ingredients')
-            ->add('groupName', EntityType::class, [
-                'class' => Product::class,
-                'choice_label' => 'group_name'
+            ->add('groupName', ChoiceType::class, [
+                'choices' => [
+                    'Baguette' => 'Baguette',
+                    'Wrap' => 'Wrap',
+                    'Norvégien' => 'Norvégien',
+                    'Soupe en hiver & Gaspachos en été' => 'Soupe en hiver & Gaspachos en été',
+                    'Boisson sans alcool' => 'Boisson sans Alcool',
+                    'Boisson alcoolisées' => 'Boisson alcoolisées',
+                ]
             ])
             ->add('groupDescription')
             ->add('category', EntityType::class, [
                 'class' => Category::class,
-                'choice_label' => 'name'
+                'choice_label' => 'name',
             ])
         ;
     }

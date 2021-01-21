@@ -83,6 +83,6 @@ class AdminPageController extends AbstractController
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('product_index');
+        return $this->redirectToRoute('admin_product');
     }
 }

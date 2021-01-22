@@ -8,7 +8,7 @@
                 <a href="{{ path('carte') }}">Carte</a>
                 <a href="{{ path('caterer') }}">Traiteur</a>
                 <a href="{{ path('partners') }}">Partenaire</a>
-                <a href="{{ path('index') }}">🏠</a>
+                <a href="{{ path('index') }}"><img src = "{{ ('images/taste-logo.jpg') }}" class="image-home" alt="logo home" width="55" height="55"/></a>
                 <a href="#">News</a>
                 <a href="#">Contact</a>
                 {% if app.user %}
@@ -39,25 +39,25 @@
             </ul>
         </div>
         <div class="bloc footerContact">
-            <h3>Restons en Contact</h3>
-            <p>06 00 00 00 00</p>
-            <p>4 rue des Wilders, Tours, 37000</p>
-            <p>Lundi au Vendredi 10h30 à 21h00</p>
+            <h3>Restons en Contact!</h3>
+            <p>09 53 03 74 69</p>
+            <p>55 rue du Commerce, Tours, 37000</p>
+            <p>Lundi au Vendredi de 10h30 à 21h00</p>
         </div>
         <div class="bloc footerSociaux">
             <h3>Nos Réseaux</h3>
             <ul class="listSociaux">
                 <li>
-                    <a href="#"><img src="../images/insta" alt="icone réseaux sociaux"></a>
+                    <a href="https://www.instagram.com/taste_restaurant37" target="_blank"><img src="/images/instagram.png" alt="icone réseaux sociaux" width="30" height="35"/></a>
                 </li>
                 <li>
-                    <a href="#"><img src="../images/facebook" alt="icone réseaux sociaux"></a>
+                    <a href="https://www.facebook.com/Tasterestauranttours" target="_blank"><img src="/images/facebook.png" alt="icone réseaux sociaux" width="30" height="35"/></a>
                 </li>
                 <li>
-                    <a href="{{ path('CGU') }}"> Conditions générales d'utilisation </a>
+                    <a href="{{ path('CGU') }}">- Conditions générales d'utilisation </a>
                 </li>
                 <li>
-                    <a href="{{ path('FAQ') }}"> Foire aux questions </a>
+                    <a href="{{ path('FAQ') }}">- Foire aux questions </a>
                 </li>
             </ul>
         </div>

@@ -25,6 +25,11 @@
     z-index: 10;
 }
 
+/* Image Home Taste */
+.image-home{
+    border-radius: 50%;
+}
+
 /* Section "Nos Services" */
 .service {
     display: flex;

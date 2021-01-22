@@ -22,5 +22,5 @@
 
 .nav a {
     text-decoration: none;
-    color: var(--color-title-header);
+    color: var(--color-text-nav);
 }

@@ -1,9 +1,10 @@
 :root {
     /* VARIABLE FOR NAVBAR */
-    --nav-background-color: rgba(196, 196, 196, 0.5);
+    --nav-background-color: rgba(196, 196, 196, 0.9);
 
     /* VARIABLE FOR HOME PAGE*/
     --color-title-header: #fff;
+    --color-text-nav: rgb(99, 96, 96);
     --title-background-color: rgba(196, 196, 196, 0.5);
     --button-about-us-color: #D35900;
     --text-color-about-us: #fff;

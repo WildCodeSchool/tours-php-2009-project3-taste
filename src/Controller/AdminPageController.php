@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Repository\CategoryRepository;
+use App\Repository\CatererRepository;
 use App\Repository\ProductRepository;
 use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -64,6 +65,31 @@ class AdminPageController extends AbstractController
 
         return $this->render('admin/category.html.twig', [
             'categories' => $categories
+        ]);
+    }
+
+    /**
+     * @Route("/caterer", name="caterer", methods={"GET"})
+     * @param Request $request
+     * @param CatererRepository $catererRepository
+     * @param PaginatorInterface $paginator
+     * @return Response
+     */
+    public function devisShow(
+        Request $request,
+        CatererRepository $catererRepository,
+        PaginatorInterface $paginator
+    ): Response {
+
+        $donnees = $catererRepository->findAll();
+        $caterers = $paginator->paginate(
+            $donnees,
+            $request->query->getInt('page', 1),
+            6
+        );
+
+        return $this->render('admin/caterer.html.twig', [
+            'caterers' => $caterers
         ]);
     }
 }

@@ -7,7 +7,7 @@
     align-items: center;
     justify-content: center;
     z-index: 10;
-    background: url('../images/deventure.jpg') no-repeat fixed center;
+    background: url('../images/resto.jpeg') no-repeat fixed center;
     min-height: 850px;
     background-size: cover;
 }
@@ -25,10 +25,7 @@
     z-index: 10;
 }
 
-/* Image Home Taste */
-.image-home{
-    border-radius: 50%;
-}
+
 
 /* Section "Nos Services" */
 .service {
@@ -48,10 +45,11 @@ main {
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
-    background: url('../images/couvertureAccueil.jpg') no-repeat fixed center ;
+    background: url('../images/plat.jpg') no-repeat center;
     background-size: cover;
     min-height: 600px;
     margin-bottom: 90px;
+    background-position: bottom;
 }
 .text-1 {
     display: flex;
@@ -90,7 +88,7 @@ main {
     display: flex;
     justify-content: flex-start;
     align-items: flex-end;
-    background: url('https://via.placeholder.com/1700x450') no-repeat fixed center ;
+    background: url('https://via.placeholder.com/1700x450') no-repeat center ;
     background-size: cover;
     height: 400px;
     margin-bottom: 90px;
@@ -120,7 +118,7 @@ main {
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
-    background: url('https://via.placeholder.com/1700x450') no-repeat fixed center ;
+    background: url('https://via.placeholder.com/1700x450') no-repeat center ;
     background-size: cover;
     height: 400px;
     border: solid 1px black;

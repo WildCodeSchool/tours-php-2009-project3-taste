@@ -2,13 +2,13 @@
 
 {% block stylesheets %}
     <link href="{{ 'style/footer.css' }}" rel="stylesheet">
-    {# <link href="{{ 'style/nav.css' }}" rel="stylesheet"> #}
+    <link href="{{ 'style/nav.css' }}" rel="stylesheet">
 {% endblock %}
 
 {% block title %}Log in!{% endblock %}
 
 {% block main %}
-<form method="post">
+<form method="post" class="login-form">
     {% if error %}
         <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
     {% endif %}

@@ -3,7 +3,7 @@
     <link href="{{ 'style/catererstyle.css' }}" rel="stylesheet">
     <link href="{{ 'style/footer.css' }}" rel="stylesheet">
     <link href="{{ 'style/nav.css' }}" rel="stylesheet">
-    {{ encore_entry_link_tags('app') }}
+    {{ encore_entry_link_tags('caterer') }}
 {% endblock %}
 
 {% block title %}Artisan Traiteur{% endblock %}
@@ -37,16 +37,46 @@
             tempor lacinia leo. Sed placerat finibus felis, et efficitur magna euismod a. Sed vitae rhoncus. </p>
     </div>
 
-    <div class="quote-caterer">
-        <h3 class="text-quote-caterer">Demande De Devis</h3>
-    </div>
-
-    {% form_theme form 'bootstrap_4_layout.html.twig' %}
-    {{ form_start(form) }}
-    {{ form_widget(form) }}
-    <input type='submit' value='Envoyer'>
-    {{ form_end(form) }}
-    {% block javascripts %}
-        {{ encore_entry_script_tags('app') }}
-    {% endblock %}
+    <div class="container">
+        <div class="row header">
+            <h1>DEMANDE DE DEVIS</h1>
+        </div>
+        <div class="row body">
+            {{ form_start(form) }}
+            <li>
+                <p class="first">
+                    {{ form_label(form.lastname) }}
+                    {{ form_widget(form.lastname) }}
+                    {{ form_label(form.firstname) }}
+                    {{ form_widget(form.firstname) }}
+                </p>
+                <p class="second">
+                    {{ form_label(form.email) }}
+                    {{ form_widget(form.email) }}
+                    {{ form_label(form.number) }}
+                    {{ form_widget(form.number) }}
+                </p>
+                <p class="third">
+                    {{ form_label(form.budget) }}
+                    {{ form_widget(form.budget) }}
+                    {{ form_label(form.guests) }}
+                    {{ form_widget(form.guests) }}
+                </p>
+                <p class="fourth">
+                    {{ form_label(form.date) }}
+                    {{ form_widget(form.date) }}
+                    {{ form_label(form.location) }}
+                    {{ form_widget(form.location) }}
+                </p>
+            </li>
+            <li>
+                <p class="fifth">
+                    {{ form_label(form.description) }}
+                    {{ form_widget(form.description) }}
+                </p>
+            </li>
+            <li>
+                    <input class="btn btn-submit" type="submit" value="Submit" />
+                    <small>or press <strong>enter</strong></small>
+            </li>
 {% endblock %}

@@ -77,7 +77,7 @@ class AdminPageController extends AbstractController
      * @param PaginatorInterface $paginator
      * @return Response
      */
-    public function devisShow(
+    public function catererShow(
         Request $request,
         CatererRepository $catererRepository,
         PaginatorInterface $paginator

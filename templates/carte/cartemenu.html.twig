@@ -6,7 +6,12 @@
     <link href="{{ 'style/nav.css' }}" rel="stylesheet">
     {{ encore_entry_link_tags('app') }}
 {% endblock %}
-
+{% block headerTitle %}
+<div class="home-title">
+    <h1>Taste</h1>
+    <h2>Restaurant - Carte</h2>
+</div>
+{% endblock %}
 {% block main %}
     <ul class="carte-list">
         {% for category in categories %}

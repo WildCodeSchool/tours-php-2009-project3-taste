@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Repository\CategoryRepository;
+use App\Repository\CatererRepository;
 use App\Repository\ProductRepository;
 use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -30,11 +31,13 @@ class AdminPageController extends AbstractController
         PaginatorInterface $paginator
     ): Response {
 
-        $donnees = $productRepository->findAll();
+        $donnees = $productRepository->findby([], [
+            'id' => 'DESC'
+        ], null, null);
         $products = $paginator->paginate(
             $donnees,
             $request->query->getInt('page', 1),
-            6
+            5
         );
 
         return $this->render('admin/product.html.twig', [
@@ -59,11 +62,36 @@ class AdminPageController extends AbstractController
         $categories = $paginator->paginate(
             $donnees,
             $request->query->getInt('page', 1),
-            6
+            5
         );
 
         return $this->render('admin/category.html.twig', [
             'categories' => $categories
+        ]);
+    }
+
+    /**
+     * @Route("/caterer", name="caterer", methods={"GET"})
+     * @param Request $request
+     * @param CatererRepository $catererRepository
+     * @param PaginatorInterface $paginator
+     * @return Response
+     */
+    public function catererShow(
+        Request $request,
+        CatererRepository $catererRepository,
+        PaginatorInterface $paginator
+    ): Response {
+
+        $donnees = $catererRepository->findAll();
+        $caterers = $paginator->paginate(
+            $donnees,
+            $request->query->getInt('page', 1),
+            5
+        );
+
+        return $this->render('admin/caterer.html.twig', [
+            'caterers' => $caterers
         ]);
     }
 }

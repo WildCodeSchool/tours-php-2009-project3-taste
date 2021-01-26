@@ -12,7 +12,7 @@
     top: 0;
     right: 0;
     left: 0;
-    justify-content: space-evenly;
+    justify-content: space-around;
     z-index: 100;
     align-items: center;
     height: 74px;
@@ -22,5 +22,15 @@
 
 .nav a {
     text-decoration: none;
-    color: var(--color-title-header);
+    color: var(--color-text-nav);
+}
+
+/* Image Home Taste */
+.image-home{
+    border-radius: 50%;
+}
+
+.login-form{
+    margin-top: 100px;
+    margin-bottom: 100vh;
 }

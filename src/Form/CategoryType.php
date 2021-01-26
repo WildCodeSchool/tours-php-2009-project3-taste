@@ -18,13 +18,16 @@ class CategoryType extends AbstractType
                 'label' => 'Nom*',
             ])
             ->add('description', TextType::class, [
-                'label' => 'Description'
+                'label' => 'Description',
+                'required' => false,
             ])
             ->add('minPrice', MoneyType::class, [
                 'label' => 'Prix Minimum',
+                'required' => false,
             ])
             ->add('maxPrice', MoneyType::class, [
                 'label' => 'Prix Maximum',
+                'required' => false,
             ])
         ;
     }

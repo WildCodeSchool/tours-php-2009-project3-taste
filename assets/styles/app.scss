@@ -18,6 +18,10 @@ body {
   background: #fafafa;
 }
 
+main {
+  width: 100%;
+}
+
 p {
   font-family: 'Poppins', sans-serif;
   font-size: 1.1em;
@@ -61,6 +65,7 @@ a, a:hover, a:focus {
 .wrapper {
   display: flex;
   width: 100%;
+  height: 100vh;
   align-items: stretch;
   perspective: 1500px;
 }

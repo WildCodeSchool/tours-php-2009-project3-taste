@@ -11,7 +11,7 @@ class CategoryFixtures extends Fixture
 {
     public function load(ObjectManager $manager): void
     {
-        $faker = Faker\Factory::create('en_US');
+        /*$faker = Faker\Factory::create('en_US');
 
         for ($i = 0; $i < 5; $i++) {
             $category = new Category();
@@ -28,6 +28,6 @@ class CategoryFixtures extends Fixture
         $this->addReference('category_6', $category);
         $manager->persist($category);
 
-        $manager->flush();
+        $manager->flush();*/
     }
 }

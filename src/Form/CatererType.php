@@ -52,7 +52,7 @@ class CatererType extends AbstractType
             ])
             ->add('description', TextareaType::class, [
                 'label' => 'Description de l\'évenement',
-                'attr' => ['class' => 'event']
+                'attr' => ['class' => 'event', 'rows' => 10]
             ])
         ;
     }

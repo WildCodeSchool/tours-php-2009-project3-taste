@@ -1,6 +1,5 @@
 {% extends 'caterer/layout.html.twig' %}
 {% block stylesheets %}
-    <link href="{{ 'style/catererstyle.css' }}" rel="stylesheet">
     <link href="{{ 'style/footer.css' }}" rel="stylesheet">
     <link href="{{ 'style/nav.css' }}" rel="stylesheet">
     {{ encore_entry_link_tags('caterer') }}
@@ -43,40 +42,43 @@
         </div>
         <div class="row body">
             {{ form_start(form) }}
-            <li>
-                <p class="first">
+                <div class="A">
                     {{ form_label(form.lastname) }}
                     {{ form_widget(form.lastname) }}
+                </div>
+                <div class="B">
                     {{ form_label(form.firstname) }}
                     {{ form_widget(form.firstname) }}
-                </p>
-                <p class="second">
+                </div>
+                <div class="C">
                     {{ form_label(form.email) }}
                     {{ form_widget(form.email) }}
+                </div>
+                <div class="D">
                     {{ form_label(form.number) }}
                     {{ form_widget(form.number) }}
-                </p>
-                <p class="third">
+                </div>
+                <div class="E">
                     {{ form_label(form.budget) }}
                     {{ form_widget(form.budget) }}
+                </div>
+                <div class="F">
                     {{ form_label(form.guests) }}
                     {{ form_widget(form.guests) }}
-                </p>
-                <p class="fourth">
+                </div>
+                <div class="G">
                     {{ form_label(form.date) }}
                     {{ form_widget(form.date) }}
+                </div>
+                <div class="H">
                     {{ form_label(form.location) }}
                     {{ form_widget(form.location) }}
-                </p>
-            </li>
-            <li>
-                <p class="fifth">
+                </div>
+                <div class="I">
                     {{ form_label(form.description) }}
                     {{ form_widget(form.description) }}
-                </p>
-            </li>
-            <li>
+                </div>
+            {{ form_end (form)}}
                     <input class="btn btn-submit" type="submit" value="Submit" />
                     <small>or press <strong>enter</strong></small>
-            </li>
 {% endblock %}

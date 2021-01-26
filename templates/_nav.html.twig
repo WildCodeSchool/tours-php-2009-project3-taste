@@ -1,0 +1,17 @@
+<nav class="nav">
+    <a href="{{ path('carte') }}">Carte</a>
+    <a href="{{ path('caterer') }}">Traiteur</a>
+    <a href="#">Click'n Collect</a>
+    <a href="{{ path('index') }}"><img src = "{{ ('images/taste-logo.jpg') }}" class="image-home" alt="logo home" width="55" height="55"/></a>
+    <a href="#">News</a>
+    <a href="{{ path('partners') }}">Partenaire</a>
+    {% if app.user %}
+
+        <a href="{{ path('app_logout') }}">  {{ app.user.name }} </a>
+
+    {% else %}
+
+        <a href="{{ path('app_login') }}"> Connexion</a>
+
+    {% endif %}
+</nav>

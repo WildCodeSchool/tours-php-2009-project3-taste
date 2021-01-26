@@ -31,11 +31,13 @@ class AdminPageController extends AbstractController
         PaginatorInterface $paginator
     ): Response {
 
-        $donnees = $productRepository->findAll();
+        $donnees = $productRepository->findby([], [
+            'id' => 'DESC'
+        ], null, null);
         $products = $paginator->paginate(
             $donnees,
             $request->query->getInt('page', 1),
-            6
+            5
         );
 
         return $this->render('admin/product.html.twig', [
@@ -60,7 +62,7 @@ class AdminPageController extends AbstractController
         $categories = $paginator->paginate(
             $donnees,
             $request->query->getInt('page', 1),
-            6
+            5
         );
 
         return $this->render('admin/category.html.twig', [
@@ -85,7 +87,7 @@ class AdminPageController extends AbstractController
         $caterers = $paginator->paginate(
             $donnees,
             $request->query->getInt('page', 1),
-            6
+            5
         );
 
         return $this->render('admin/caterer.html.twig', [

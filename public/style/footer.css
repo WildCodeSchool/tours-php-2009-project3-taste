@@ -62,15 +62,14 @@ footer {
     position: relative;
 }
 .listSociaux img {
-    width: 40px;
     margin: 0px 10px;
 }
 .listSociaux a {
     text-decoration: none;
-    color: white;
+    color: #999;
     display: flex;
     align-items: center;
-    font-size: 25px;
+    
     padding-top: 15px;
 }
 .listSociaux li {

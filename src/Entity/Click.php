@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\ClickRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=ClickRepository::class)
@@ -19,20 +20,31 @@ class Click
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank
+     * @Assert\Length(min=1, max=255)
      */
     private string $name;
 
     /**
+     *
+     * @Assert\NotBlank
+     * @Assert\LessThan(1000)
      * @ORM\Column(type="decimal", precision=5, scale=2)
      */
     private string $price;
 
     /**
+     * @Assert\NotBlank
      * @ORM\Column(type="string", length=255)
      */
     private string $category;
 
     /**
+     * @Assert\NotBlank
+     * @Assert\File(
+     *     mimeTypes = {"image/jpeg", "image/jpg", "image/png"},
+     *     mimeTypesMessage = "Le format n'est pas valide(JPEG/JPG/PNG)"
+     * )
      * @ORM\Column(type="string", length=255)
      */
     private string $image;

@@ -22,29 +22,37 @@ class CatererType extends AbstractType
                 'attr' => ['class' => 'name']
             ])
             ->add('firstname', TextType::class, [
-                'label' => 'Prénom'
+                'label' => 'Prénom',
+                'attr' => ['class' => 'firstname']
             ])
             ->add('email', EmailType::class, [
-                'label' => 'Email'
+                'label' => 'Email',
+                'attr' => ['class' => 'email']
             ])
             ->add('number', TelType::class, [
-                'label' => 'Téléphone'
+                'label' => 'Téléphone',
+                'attr' => ['class' => 'tel']
             ])
             ->add('budget', TextType::class, [
-                'label' => 'Budget'
+                'label' => 'Budget',
+                'attr' => ['class' => 'budget']
             ])
             ->add('date', DateType::class, [
                 'widget' => 'single_text',
                 'format' => 'yyyy-MM-dd',
+                'attr' => ['class' => 'date']
             ])
             ->add('location', TextType::class, [
-                'label' => 'Localisation'
+                'label' => 'Localisation',
+                'attr' => ['class' => 'local']
             ])
             ->add('guests', TextType::class, [
-                'label' => 'Nombre d\'invités'
+                'label' => 'Nombre d\'invités',
+                'attr' => ['class' => 'guests']
             ])
             ->add('description', TextareaType::class, [
-                'label' => 'Description de l\'évenement'
+                'label' => 'Description de l\'évenement',
+                'attr' => ['class' => 'event', 'rows' => 10]
             ])
         ;
     }

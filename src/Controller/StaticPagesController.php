@@ -19,7 +19,7 @@ class StaticPagesController extends AbstractController
      */
     public function index(): Response
     {
-        return $this->render('static/index.html.twig');
+        return $this->render('static/click.html.twig');
     }
     /**
      * @Route("/FAQ", name="FAQ")

@@ -27,7 +27,7 @@
             <div class="card_content">
                 <h2 class="card_title">{{ product.name }}</h2>
                 <p class="card_text">{{ product.category }}</p>
-                <button class="btn card_btn" onclick=window.location.href="#">{{ product.price }}</button>
+                <button class="btn card_btn" onclick=window.location.href="{{ path('add_cart', {id: product.id}) }}">{{ product.price }}</button>
             </div>
         </div>
     </li>

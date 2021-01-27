@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Click;
+use App\Form\ClickEditType;
 use App\Form\ProductClickType;
 use App\Repository\ClickRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -82,7 +83,7 @@ class ProductClickController extends AbstractController
      */
     public function edit(Request $request, Click $productClick): Response
     {
-        $form = $this->createForm(ProductClickType::class, $productClick);
+        $form = $this->createForm(ClickEditType::class, $productClick);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {

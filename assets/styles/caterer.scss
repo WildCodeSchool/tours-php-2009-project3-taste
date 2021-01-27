@@ -1,5 +1,29 @@
 $primary: darken(#428bca, 20%);
 
+/* Image background in header */
+.image-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  background: url('/images/caterer/image--002.jpg') no-repeat fixed center;
+  min-height: 850px;
+  background-size: cover;
+}
+
+/* Title in Header */
+.home-title {
+  padding: 100px;
+  text-align: center;
+  font-family: 'Inconsolata', monospace;
+  color: var(--color-title-header);
+  background: var(--title-background-color) fixed center;
+  background-size: cover;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  -webkit-backdrop-filter: blur(2px);
+  z-index: 10;
+}
+
 $white: #fff;
 $grey: #ccc;
 $dark_grey: #455;
@@ -19,7 +43,7 @@ $pink: #ee9cb4;
 }
 
 body {
-  background-color: lighten($color: grey, $amount: 10%);
+  background-color: lighten($color: white, $amount: 10%);
   font-size: 100%;
 }
 
@@ -41,19 +65,10 @@ body {
   display: flex;
 }
 
-.quote-caterer{
-  background: grey;
-  width: 25%;
-  margin: auto;
-}
-
-.text-quote-caterer{
-  text-align: center
-}
-
 p {
   text-align: center;
   align-self: center;
+
 }
 
 .container {  

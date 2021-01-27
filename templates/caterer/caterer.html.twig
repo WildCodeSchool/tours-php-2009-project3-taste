@@ -8,31 +8,29 @@
 {% block title %}Artisan Traiteur{% endblock %}
 
 {% block headerTitle %}
-    <div class="background-title-home">
+    <div class="home-title">
         <h1 style="">Artisan Traiteur</h1>
-        <h2></h2>
+        <h2>TASTE DE VOS MORTS</h2>
     </div>
 {% endblock %}
 
 {% block main %}
-    <h2 style="text-align: center">Traiteur</h2>
-    <div class="border-caterer"></div>
 
     <div class="cocktail-caterer">
         <img src="/images/caterer/image--006.jpg" alt="place holder" width="50%">
-        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eros orci, accumsan nec est in,
+        <p class="text"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eros orci, accumsan nec est in,
             tempor lacinia leo. Sed placerat finibus felis, et efficitur magna euismod a. Sed vitae rhoncus. </p>
     </div>
 
     <div class="entree-caterer">
-        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eros orci, accumsan nec est in,
+        <p class="text"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eros orci, accumsan nec est in,
             tempor lacinia leo. Sed placerat finibus felis, et efficitur magna euismod a. Sed vitae rhoncus. </p>
         <img src="/images/caterer/image--002.jpg" alt="place holder" width="50%">
     </div>
 
     <div class="plate-caterer">
         <img src="/images/caterer/image--009.jpg" alt="place holder" width="50%">
-        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eros orci, accumsan nec est in,
+        <p class="text"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eros orci, accumsan nec est in,
             tempor lacinia leo. Sed placerat finibus felis, et efficitur magna euismod a. Sed vitae rhoncus. </p>
     </div>
 
@@ -78,7 +76,7 @@
                     {{ form_label(form.description) }}
                     {{ form_widget(form.description) }}
                 </div>
-            {{ form_end (form)}}
                     <input class="btn btn-submit" type="submit" value="Submit" />
                     <small>ou pressez <strong>entrer</strong></small>
+                {{ form_end (form)}}
 {% endblock %}

@@ -36,9 +36,9 @@ class CatererController extends AbstractController
             $entityManager->flush();
 
             $email = (new Email())
-                ->from($this->getParameter('mailer_from'))
+                ->from('taste.mathieu@gmail.com')
                 ->to('taste.mathieu@gmail.com')
-                ->subject('Une nouvelle demande de devis est arrivée!')
+                ->subject('Une nouvelle demande de devis est arrivée! #' . $caterer->getId())
                 ->html($this->renderView('caterer/catererMail.html.twig', ['caterer' => $caterer]));
             $mailer->send($email);
             return $this->redirectToRoute('index');

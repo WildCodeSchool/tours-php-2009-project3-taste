@@ -115,7 +115,7 @@ class AdminPageController extends AbstractController
         $productClick = $paginator->paginate(
             $donnes,
             $request->query->getInt('page', 1),
-            5
+            3
         );
         return $this->render('Admin/click.html.twig', [
             'productClick' => $productClick

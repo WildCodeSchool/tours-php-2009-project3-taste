@@ -14,13 +14,13 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\String\Slugger\SluggerInterface;
 
 /**
- * @Route("/product/click")
+ * @Route("/product-click", name="click_")
  */
 class ProductClickController extends AbstractController
 {
 
     /**
-     * @Route("/new", name="product_click_new", methods={"GET","POST"})
+     * @Route("/new", name="new", methods={"GET","POST"})
      * @param Request $request
      * @param SluggerInterface $slugger
      * @return Response
@@ -64,7 +64,7 @@ class ProductClickController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="product_click_show", methods={"GET"})
+     * @Route("/{id}", name="show", methods={"GET"})
      * @param Click $productClick
      * @return Response
      */
@@ -76,7 +76,7 @@ class ProductClickController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/edit", name="product_click_edit", methods={"GET","POST"})
+     * @Route("/{id}/edit", name="edit", methods={"GET","POST"})
      * @param Request $request
      * @param Click $productClick
      * @return Response
@@ -99,7 +99,7 @@ class ProductClickController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="product_click_delete", methods={"DELETE"})
+     * @Route("/{id}", name="delete", methods={"DELETE"})
      * @param Request $request
      * @param Click $productClick
      * @return Response

@@ -28,7 +28,7 @@
             <div class="row">
                 <div class="col-sm-8"><h2>Click And Collect</h2></div>
                 <div class="col-sm-4">
-                    <button type="button" class="btn btn-info add-new"><a href="{{ path('product_click_new') }}">Ajouter</a></button>
+                    <button type="button" class="btn btn-info add-new"><a href="{{ path('click_new') }}">Ajouter</a></button>
                 </div>
             </div>
         </div>
@@ -48,9 +48,9 @@
                     <td>{{ click.price }}</td>
                     <td>{{ click.category }}</td>
                     <td>
-                        <a href="{{ path('product_click_show', {'id': click.id}) }}">show</a>
+                        <a href="{{ path('click_show', {'id': click.id}) }}">show</a>
                         {{ include('product_click/_delete_form.html.twig') }}
-                        <a href="{{ path('product_click_edit', {'id': click.id}) }}">edit</a>
+                        <a href="{{ path('click_edit', {'id': click.id}) }}">edit</a>
                     </td>
                 </tr>
             {% else %}

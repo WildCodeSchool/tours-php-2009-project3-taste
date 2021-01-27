@@ -1,0 +1,37 @@
+{% extends 'click/layout.html.twig' %}
+
+{% block title %}Taste - Click And Collect{% endblock %}
+
+{% block stylesheets %}
+    <link href="{{ 'style/footer.css' }}" rel="stylesheet">
+    <link href="{{ 'style/clickStyle.css' }}" rel="stylesheet">
+    <link href="{{ 'style/nav.css' }}" rel="stylesheet">
+{% endblock %}
+
+{% block headerTitle %}
+<div class="home-title">
+    <h1>Taste</h1>
+    <h2>Click And Collect</h2>
+</div>
+{% endblock %}
+
+{% block main %}
+    <span class="cart">
+        <strong>Panier</strong>
+    </span>
+<ul class="cards">
+    {% for product in products %}
+    <li class="cards_item">
+        <div class="card">
+            <div class="card_image"><img class="card-img" src="https://via.placeholder.com/500x400"></div>
+            <div class="card_content">
+                <h2 class="card_title">{{ product.name }}</h2>
+                <p class="card_text">{{ product.category.name }}</p>
+                <button class="btn card_btn" onclick=window.location.href="#">{{ product.price }}</button>
+            </div>
+        </div>
+    </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

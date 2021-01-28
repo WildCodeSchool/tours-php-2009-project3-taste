@@ -2,7 +2,7 @@
 
 <p>
     Merci de cliquer sur le lien pour confirmation <br><br>
-    <a href="{{ signedUrl|raw }}"> confirmer mon email </a>.
+    <a href="{{ absolute_url(path('index')) }}"> confirmer mon email </a>.
     le mail expira dans {{ expiresAt|date('g') }} heure(s).
 </p>
 

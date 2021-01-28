@@ -39,6 +39,11 @@ class CartService
         $this->session->set('cart', $cart);
     }
 
+    public function cartRemove(): self
+    {
+        return $this->session->set('cart', []);
+    }
+
     /**
      * @return array[]
      */

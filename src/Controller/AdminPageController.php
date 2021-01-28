@@ -2,14 +2,21 @@
 
 namespace App\Controller;
 
+use App\Entity\Order;
 use App\Repository\CategoryRepository;
 use App\Repository\CatererRepository;
 use App\Repository\ClickRepository;
+use App\Repository\OrderRepository;
 use App\Repository\ProductRepository;
+use Doctrine\ORM\EntityManagerInterface;
 use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Mailer\Exception\TransportExceptionInterface;
+use Symfony\Component\Mailer\MailerInterface;
+use Symfony\Component\Mime\Email;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
@@ -120,5 +127,75 @@ class AdminPageController extends AbstractController
         return $this->render('Admin/click.html.twig', [
             'productClick' => $productClick
         ]);
+    }
+
+    /**
+     * @param Request $request
+     * @param OrderRepository $orderRepository
+     * @param PaginatorInterface $paginator
+     * @return Response
+     * @Route("/order", name="order")
+     */
+    public function orderShow(
+        Request $request,
+        OrderRepository $orderRepository,
+        PaginatorInterface $paginator
+    ): Response {
+
+        $donnes = $orderRepository->findby([], [
+            'id' => 'DESC'
+        ]);
+        $orders = $paginator->paginate(
+            $donnes,
+            $request->query->getInt('page', 1),
+            6
+        );
+        return $this->render('Admin/order.html.twig', [
+            'orders' => $orders
+        ]);
+    }
+
+    /**
+     * @Route("/panier/validate/{id}/{order}", name="validate")
+     * @param int $id
+     * @param Order $order
+     * @param EntityManagerInterface $entityManager
+     * @param MailerInterface $mailer
+     * @return RedirectResponse
+     * @throws TransportExceptionInterface
+     */
+    public function isValidated(
+        int $id,
+        Order $order,
+        EntityManagerInterface $entityManager,
+        MailerInterface $mailer
+    ): RedirectResponse {
+        $user = $order->getUser();
+        if ($user !== null) {
+            if ($id === 1) {
+                $order->setIsValided(true);
+                $entityManager->flush();
+
+                $email = (new Email())
+                    ->from('taste.mathieu@gmail.com')
+                    ->to($user->getEmail())
+                    ->subject('Votre commande est en cours préparation')
+                    ->html('Vous pouvez venir cherché votre commande à ' . $order->getHours()->format('H:i'));
+                $mailer->send($email);
+            } elseif ($id === 0) {
+                $order->setIsValided(false);
+                $entityManager->flush();
+                $email = (new Email())
+                    ->from('taste.mathieu@gmail.com')
+                    ->to($$user->getEmail())
+                    ->subject('Votre commande a été refuser')
+                    ->html('Votre commande a été refuser, veuillez contacter la boutique au : 09 53 03 74 69');
+                $mailer->send($email);
+            } elseif ($id === 3) {
+                $entityManager->remove($order);
+                $entityManager->flush();
+            }
+        }
+        return $this->redirectToRoute('admin_order');
     }
 }

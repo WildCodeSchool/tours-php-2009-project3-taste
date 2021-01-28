@@ -19,8 +19,9 @@ $('form input').on('blur input focus', function() {
         $field.removeClass("filled");
     }
 });
-$("form input").on("focus", function() {
-    var $field = $(this).closest(".A, .B, .C, .D, .E, .F, .G, .H, .I");
+
+$('form input').on('focus', function() {
+    let $field = $(this).closest(".A, .B, .C, .D, .E, .F, .G, .H, .I");
     if (this) {
         $field.addClass("filled");
     } else {

@@ -16,7 +16,7 @@
     <h1 class="h3 mb-3 font-weight-normal"> Identifiez-vous s'il vous plait </h1>
     <label for="inputEmail">Email</label>
     <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" required autofocus>
-    <label for="inputPassword">Password</label>
+    <label for="inputPassword">Mot de Passe</label>
     <input type="password" name="password" id="inputPassword" class="form-control" required>
 
     <input type="hidden" name="_csrf_token"
@@ -40,5 +40,8 @@
 </form>
     <div class="registration">
         <a href="{{ path('app_register') }}"> inscription </a>
+    </div>
+    <div class="">
+        <a href="{{ path('app_forgot_password_request') }}">Mot de Passe oublié </a>
     </div>
 {% endblock %}

@@ -39,9 +39,7 @@ class CatererType extends AbstractType
             ])
             ->add('date', DateType::class, [
                 'widget' => 'single_text',
-                'html5' => false,
-                'format' => 'dd/MM/yyyy',
-                'attr' => ['class' => 'date']
+                'attr' => ['class' => 'date'],
             ])
             ->add('location', TextType::class, [
                 'label' => 'Localisation',

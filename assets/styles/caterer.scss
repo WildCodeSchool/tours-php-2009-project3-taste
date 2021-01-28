@@ -74,14 +74,18 @@ label {
 	font-size: 0.8em;
 } 
 
-input[type="text"], input[type="email"], input[type="tel"] {
+input[type="text"], input[type="email"], input[type="tel"], input[type="date"] {
   font-size: 1.25em;
   padding: 0 0 5px 0;
   z-index: 10;
   background: transparent;
   margin-bottom: 0.5em;
   border: none;
-  border-bottom: 2px solid black;
+  border-bottom: 1px solid grey;
+}
+
+input[type="date"] {
+  top: 31px;
 }
 
 .cocktail-caterer {
@@ -226,10 +230,4 @@ textarea {
   &.btn-submit {
     @include btn(#94AC00)
   }
-}
-
-.border {
-  border: solid 1px;
-  border-image-source: linear-gradient(to right, grey 50%,white 70%);
-  border-image-slice: 1;
 }

@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Repository\CategoryRepository;
 use App\Repository\CatererRepository;
+use App\Repository\ClickRepository;
 use App\Repository\ProductRepository;
 use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -92,6 +93,32 @@ class AdminPageController extends AbstractController
 
         return $this->render('admin/caterer.html.twig', [
             'caterers' => $caterers
+        ]);
+    }
+
+    /**
+     * @Route("/click", name="click_index", methods={"GET"})
+     * @param Request $request
+     * @param ClickRepository $clickRepository
+     * @param PaginatorInterface $paginator
+     * @return Response
+     */
+    public function clickShow(
+        Request $request,
+        ClickRepository $clickRepository,
+        PaginatorInterface $paginator
+    ): Response {
+
+        $donnes = $clickRepository->findby([], [
+            'id' => 'DESC'
+        ]);
+        $productClick = $paginator->paginate(
+            $donnes,
+            $request->query->getInt('page', 1),
+            3
+        );
+        return $this->render('Admin/click.html.twig', [
+            'productClick' => $productClick
         ]);
     }
 }

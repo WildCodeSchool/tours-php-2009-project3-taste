@@ -1,0 +1,23 @@
+{% extends 'insta/layout.html.twig' %}
+
+{% block headertitle %}Taste - News{% endblock %}
+
+{% block stylesheets %}
+    <link href="{{ 'style/footer.css' }}" rel="stylesheet">
+    <link href="{{ 'style/styleNews.css' }}" rel="stylesheet">
+    <link href="{{ 'style/nav.css' }}" rel="stylesheet">
+{% endblock %}
+
+{% block main %}
+    <iframe src="//lightwidget.com/widgets/9e9b5e139f0c5359850cd4412cbda2a0.html"
+            scrolling="no"
+            allowtransparency="true"
+            class="lightwidget-widget"
+            style=" width:100%; border:0; overflow:hidden;">
+    </iframe>
+{% endblock %}
+
+{% block javascripts %}
+    <!-- LightWidget WIDGET -->
+    <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>
+{% endblock %}

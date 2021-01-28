@@ -48,4 +48,13 @@ class StaticPagesController extends AbstractController
     {
         return $this->render('static/partners.html.twig');
     }
+
+    /**
+     * @return Response
+     * @Route("/news", name="news")
+     */
+    public function instaShow()
+    {
+        return $this->render('insta/index.html.twig');
+    }
 }

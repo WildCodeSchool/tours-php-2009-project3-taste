@@ -11,20 +11,20 @@ import '../styles/caterer.scss';
 // Need jQuery? Install it with "yarn add jquery", then uncomment to import it.
 import $ from 'jquery';
 
-$('form input').on('blur input focus', function() {
-    let $field = $(this).closest(".A, .B, .C, .D, .E, .F, .G, .H, .I");
+$('form input').on('blur input focus', function () {
+    const $field = $(this).closest('.A, .B, .C, .D, .E, .F, .G, .H, .I');
     if (this.value) {
-      $field.addClass("filled");
+        $field.addClass('filled');
     } else {
-      $field.removeClass("filled");
+        $field.removeClass('filled');
     }
-  });
-  
-  $('form input').on('focus', function() {
-    let $field = $(this).closest(".A, .B, .C, .D, .E, .F, .G, .H, .I");
+});
+
+$('form input').on('focus', function () {
+    const $field = $(this).closest('.A, .B, .C, .D, .E, .F, .G, .H, .I');
     if (this) {
-      $field.addClass("filled");
+        $field.addClass('filled');
     } else {
-      $field.removeClass("filled");
+        $field.removeClass('filled');
     }
-  });
+});

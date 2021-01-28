@@ -14,17 +14,17 @@ import $ from 'jquery';
 $('form input').on('blur input focus', function() {
     let $field = $(this).closest(".A, .B, .C, .D, .E, .F, .G, .H, .I");
     if (this.value) {
-        $field.addClass("filled");
+      $field.addClass("filled");
     } else {
-        $field.removeClass("filled");
+      $field.removeClass("filled");
     }
-});
-
-$('form input').on('focus', function() {
+  });
+  
+  $('form input').on('focus', function() {
     let $field = $(this).closest(".A, .B, .C, .D, .E, .F, .G, .H, .I");
     if (this) {
-        $field.addClass("filled");
+      $field.addClass("filled");
     } else {
-        $field.removeClass("filled");
+      $field.removeClass("filled");
     }
-});
+  });

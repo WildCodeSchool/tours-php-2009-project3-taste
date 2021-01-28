@@ -9,6 +9,9 @@ $primary: darken(#428bca, 20%);
   background: url('/images/caterer/image--002.jpg') no-repeat fixed center;
   min-height: 850px;
   background-size: cover;
+  box-shadow: 10px 10px 19px -5px rgba(0,0,0,0.6);
+
+  border: none;
 }
 
 /* Title in Header */
@@ -43,32 +46,78 @@ $pink: #ee9cb4;
 }
 
 body {
-  background-color: lighten($color: white, $amount: 10%);
+  background-color: darken($color: #BADA55, $amount: 20%);
   font-size: 100%;
 }
 
-.border-caterer {
+input,
+label {
+  position: relative;
+  display: inline-block;
+}
+
+label {
+  display: inline-block;
+  margin: 0 0 2px 0;
+  padding: 0 0 5px 0;
+  transition: all 0.5s ease-in-out; 
+  z-index: 1;
+  top: 36px;
+}
+
+.labelI {
+  margin-bottom: 36px;
+}
+
+.filled label {
+	top: 0;
+	font-size: 0.8em;
+} 
+
+input[type="text"], input[type="email"], input[type="tel"] {
+  font-size: 1.25em;
+  padding: 0 0 5px 0;
+  z-index: 10;
+  background: transparent;
+  margin-bottom: 0.5em;
+  border: none;
   border-bottom: 2px solid black;
-  width: 25%;
-  margin: auto auto 2vw auto;
 }
 
 .cocktail-caterer {
   display: flex;
+  margin-top: 100px;
+  background-color: lightgray;
+  margin-bottom: 60px;
+  box-shadow: 10px 10px 19px -5px rgba(0,0,0,0.6);
 }
 
 .entree-caterer {
   display: flex;
+  background-color: lightgray;
+  margin-bottom: 60px;
+  box-shadow: 10px 10px 19px -5px rgba(0,0,0,0.6);
 }
 
 .plate-caterer {
   display: flex;
+  background-color: lightgray;
+  box-shadow: 10px 10px 19px -5px rgba(0,0,0,0.6);
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.event {
+  align-self: center;
 }
 
 p {
   text-align: center;
   align-self: center;
-
+  margin: 0 100px;
 }
 
 .container {  
@@ -92,10 +141,6 @@ p {
   &.body {
     padding: .5em 2.5em 1em;
   }
-}
-
-li {
-  list-style: none;
 }
 
 .A {
@@ -130,6 +175,10 @@ li {
   grid-area: H;
 }
 
+.border {
+  grid-area: border;
+}
+
 .I {
   grid-area: I;
   display: flex;
@@ -151,6 +200,7 @@ form {
     "C D"
     "E F"
     "G H"
+    "border border"
     "I I";
 }
 
@@ -166,13 +216,20 @@ textarea {
   font-size: pxtoem(17, 16);
   display: inline-block;
   padding: 0.74em 1.5em;
-  margin: 1.5em 0 0;
+  margin: 1.5em 0;
   color: $white;
   border-width: 0 0 0 0;
   border-bottom: 5px solid;
   text-transform: uppercase;
+  margin-left: 80%;
   @include btn(darken($grey, 10%));
   &.btn-submit {
-    @include btn($blue)
+    @include btn(#94AC00)
   }
+}
+
+.border {
+  border: solid 1px;
+  border-image-source: linear-gradient(to right, grey 50%,white 70%);
+  border-image-slice: 1;
 }

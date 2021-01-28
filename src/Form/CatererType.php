@@ -39,7 +39,8 @@ class CatererType extends AbstractType
             ])
             ->add('date', DateType::class, [
                 'widget' => 'single_text',
-                'format' => 'yyyy-MM-dd',
+                'html5' => false,
+                'format' => 'dd/MM/yyyy',
                 'attr' => ['class' => 'date']
             ])
             ->add('location', TextType::class, [
@@ -52,7 +53,7 @@ class CatererType extends AbstractType
             ])
             ->add('description', TextareaType::class, [
                 'label' => 'Description de l\'évenement',
-                'attr' => ['class' => 'event', 'rows' => 10]
+                'attr' => ['class' => 'description', 'rows' => 10]
             ])
         ;
     }

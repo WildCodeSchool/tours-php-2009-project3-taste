@@ -17,17 +17,17 @@
 
 {% block main %}
     <span class="cart">
-        <strong>Panier</strong>
+        <strong><a href="{{ path('cart_show') }}">Panier</a></strong>
     </span>
 <ul class="cards">
     {% for product in products %}
     <li class="cards_item">
         <div class="card">
-            <div class="card_image"><img class="card-img" src="https://via.placeholder.com/500x400"></div>
+            <div class="card_image"><img class="card-img" src="/uploads/{{ product.image }}"></div>
             <div class="card_content">
                 <h2 class="card_title">{{ product.name }}</h2>
-                <p class="card_text">{{ product.category.name }}</p>
-                <button class="btn card_btn" onclick=window.location.href="#">{{ product.price }}</button>
+                <p class="card_text">{{ product.category }}</p>
+                <button class="btn card_btn" onclick=window.location.href="{{ path('cart_add', {id: product.id}) }}">{{ product.price }}</button>
             </div>
         </div>
     </li>

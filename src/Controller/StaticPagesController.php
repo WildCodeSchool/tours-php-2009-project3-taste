@@ -48,4 +48,14 @@ class StaticPagesController extends AbstractController
     {
         return $this->render('static/partners.html.twig');
     }
+
+    /**
+     * This method is used to display the partner page
+     * @Route("/news", name="news")
+     * @return Response
+     */
+    public function newsShow(): Response
+    {
+        return $this->render('static/insta.html.twig');
+    }
 }

@@ -1,0 +1,112 @@
+{% extends 'admin/layout.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    {{ encore_entry_link_tags ("AdminStyle") }}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+{% endblock %}
+
+{% block title %}Administration - Commandes{% endblock %}
+
+{% block main %}
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+
+            <button type="button" id="sidebarCollapse" class="navbar-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-align-justify"></i>
+            </button>
+        </div>
+    </nav>
+    <div class="table-wrapper">
+        <div class="table-title">
+            <div class="row">
+                <div class="col-sm-8"><h2>Commandes</h2></div>
+                <div class="col-sm-4">
+                    {# <button type="button" class="btn btn-info add-new"><a href="{{ path('product_new') }}"></a></button> #}
+                </div>
+            </div>
+        </div>
+        <table class="table text-center">
+            <thead>
+            <tr>
+                <th>Numéro de commande</th>
+                <th>Prix Total</th>
+                <th>Heures</th>
+                <th>Contenue</th>
+                <th>Valider</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for order in orders %}
+                <tr>
+                    <td>{{ order.id }}</td>
+                    <td>{{ order.priceTotal }}€</td>
+                    <td>{{ order.hours|date('H:i') }}</td>
+                    <td>
+                    {% for item in order.cart %}
+                        <p>{{ item.product.name }}</p>
+                    {% endfor %}
+                    </td>
+                    {% if order.isValided is null %}
+                        <td>Non validé</td>
+                        <td>
+                            <button class="btn btn-outline-success btn-sm"
+                                    onclick="window.location.href='{{ path('admin_validate', {id: 1, order: order.id}) }}';">
+                                Valider
+                            </button>
+                            <button class="btn btn-outline-danger btn-sm"
+                                    onclick="window.location.href='{{ path('admin_validate', {id: 0, order: order.id}) }}';">
+                                Refuser
+                            </button>
+                        </td>
+                    {% elseif order.isValided == 1 or order.isValided %}
+                        <td class="text-success">Valider</td>
+                        <td>
+                            <button class="btn btn-danger btn-sm"
+                                    onclick="window.location.href='{{ path('admin_validate', {id: 3, order: order.id}) }}';">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </td>
+                    {% elseif order.isValided == 0 %}
+                        <td class="text-danger">Refuser</td>
+                        <td>
+                            <button class="btn btn-danger btn-sm"
+                                    onclick="window.location.href='{{ path('admin_validate', {id: 3, order: order.id}) }}';">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </td>
+                    {% endif %}
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="7">no records found</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {{ knp_pagination_render(orders) }}
+{% endblock %}
+
+{% block javascripts %}
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+                $(this).toggleClass('active');
+            });
+        });
+    </script>
+{% endblock %}

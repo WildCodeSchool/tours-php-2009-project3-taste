@@ -1,52 +1,96 @@
 {% extends 'caterer/layout.html.twig' %}
 {% block stylesheets %}
-    <link href="{{ 'style/catererstyle.css' }}" rel="stylesheet">
     <link href="{{ 'style/footer.css' }}" rel="stylesheet">
     <link href="{{ 'style/nav.css' }}" rel="stylesheet">
-    {{ encore_entry_link_tags('app') }}
+    {{ encore_entry_link_tags('caterer') }}
 {% endblock %}
 
 {% block title %}Artisan Traiteur{% endblock %}
 
 {% block headerTitle %}
-    <div class="background-title-home">
-        <h1 style="">Artisan Traiteur</h1>
-        <h2></h2>
+    <div class="home-title">
+        <h1>Artisan Traiteur</h1>
+        <h2>Carte - Traiteur</h2>
     </div>
 {% endblock %}
 
 {% block main %}
-    <h2 style="text-align: center">Traiteur</h2>
-    <div class="border-caterer"></div>
 
     <div class="cocktail-caterer">
-        <img src="https://via.placeholder.com/755x300" alt="place holder">
-        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eros orci, accumsan nec est in,
+        <img src="/images/caterer/image--006.jpg" alt="place holder" width="50%">
+        <div class="event">
+        <h2>Lorem ipsum</h2>
+        <p class="text"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eros orci, accumsan nec est in,
             tempor lacinia leo. Sed placerat finibus felis, et efficitur magna euismod a. Sed vitae rhoncus. </p>
+        </div>
     </div>
 
     <div class="entree-caterer">
-        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eros orci, accumsan nec est in,
+        <div class="event">
+        <h2>Lorem ipsum</h2>
+        <p class="text"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eros orci, accumsan nec est in,
             tempor lacinia leo. Sed placerat finibus felis, et efficitur magna euismod a. Sed vitae rhoncus. </p>
-        <img src="https://via.placeholder.com/755x300" alt="place holder">
+        </div>
+        <img src="/images/caterer/image--000.jpg" alt="place holder" width="50%">
     </div>
 
     <div class="plate-caterer">
-        <img src="https://via.placeholder.com/755x300" alt="place holder">
-        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eros orci, accumsan nec est in,
+        <img src="/images/caterer/image--009.jpg" alt="place holder" width="50%">
+        <div class="event">
+        <h2>Lorem ipsum</h2>
+        <p class="text"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eros orci, accumsan nec est in,
             tempor lacinia leo. Sed placerat finibus felis, et efficitur magna euismod a. Sed vitae rhoncus. </p>
+        </div>
     </div>
 
-    <div class="quote-caterer">
-        <h3 class="text-quote-caterer">Demande De Devis</h3>
+    <div class="container">
+        <div class="row header">
+            <h1>DEMANDE DE DEVIS</h1>
+        </div>
+        <div class="row body">
+            {{ form_start(form) }}
+                <div class="A">
+                    {{ form_label(form.lastname) }}
+                    {{ form_widget(form.lastname) }}
+                </div>
+                <div class="B">
+                    {{ form_label(form.firstname) }}
+                    {{ form_widget(form.firstname) }}
+                </div>
+                <div class="C">
+                    {{ form_label(form.email) }}
+                    {{ form_widget(form.email) }}
+                </div>
+                <div class="D">
+                    {{ form_label(form.number) }}
+                    {{ form_widget(form.number) }}
+                </div>
+                <div class="E">
+                    {{ form_label(form.budget) }}
+                    {{ form_widget(form.budget) }}
+                </div>
+                <div class="F">
+                    {{ form_label(form.guests) }}
+                    {{ form_widget(form.guests) }}
+                </div>
+                <div class="G">
+                    {{ form_widget(form.date) }}
+                </div>
+                <div class="H">
+                    {{ form_label(form.location) }}
+                    {{ form_widget(form.location) }}
+                </div>
+                <div class="border"></div>
+                <div class="I">
+                    <div class="labelI">{{ form_label(form.description) }}</div>
+                    {{ form_widget(form.description) }}
+                </div>
+        </div>
+                    <input class="btn btn-submit" type="submit" value="Submit" />
     </div>
-
-    {% form_theme form 'bootstrap_4_layout.html.twig' %}
-    {{ form_start(form) }}
-    {{ form_widget(form) }}
-    <input type='submit' value='Envoyer'>
-    {{ form_end(form) }}
-    {% block javascripts %}
-        {{ encore_entry_script_tags('app') }}
-    {% endblock %}
+                {{ form_end (form)}}
 {% endblock %}
+
+ {% block javascripts %}
+    {{ encore_entry_script_tags('caterer') }}
+ {% endblock %}

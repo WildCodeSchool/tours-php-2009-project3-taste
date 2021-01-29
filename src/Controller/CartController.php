@@ -71,6 +71,7 @@ class CartController extends AbstractController
         $form = $this->createForm(OrderType::class, $order);
         $form->handleRequest($request);
 
+
         if ($form->isSubmitted() && $form->isValid()) {
             $order->setCart($cartService->getFullCart());
             $order->setPriceTotal($cartService->getTotal());
@@ -81,7 +82,7 @@ class CartController extends AbstractController
             $email = (new Email())
                 ->from('taste.mathieur@gmail.com')
                 ->to($user->getUsername())
-                ->to('taste.mathieu@gmail.com')
+                ->cc('taste.mathieu@gmail.com')
                 ->subject('Votre commande #' . $order->getId() . ' est en cours de validation')
                 ->html('<p>Votre commande n°' . $order->getId() . ' sera valider prochainement</p>');
             $mailer->send($email);

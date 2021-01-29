@@ -18,6 +18,7 @@
     height: 74px;
     font-size: 24px;
     background-color: var(--nav-background-color);
+    box-shadow: 0px 2px 20px 5px rgba(94,94,94,1);
 }
 
 .nav_bar a {

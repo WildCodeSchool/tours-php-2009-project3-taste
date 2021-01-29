@@ -2,7 +2,6 @@
 
 namespace App\Controller;
 
-use App\Entity\Order;
 use App\Entity\User;
 use App\Repository\OrderRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -26,8 +25,28 @@ class ProfileUserController extends AbstractController
         $orders = $orderRepository->findBy([
             "id" => $user->getId()
         ]);
-
         return $this->render('profile_user/index.html.twig', [
+            'user' => $user,
+            'orders' => $orders
+        ]);
+    }
+
+    /**
+     * @Route("/profile/history", name="profile_history")
+     * @param OrderRepository $orderRepository
+     * @return Response
+     */
+    public function history(OrderRepository $orderRepository): Response
+    {
+        /**
+         * @var User $user
+         */
+        $user = $this->getUser();
+        $orders = $orderRepository->findBy(
+            ["id" => $user->getId()],
+        );
+
+        return $this->render('profile_user/history.html.twig', [
             'user' => $user,
             'orders' => $orders
         ]);

@@ -124,7 +124,7 @@ class AdminPageController extends AbstractController
             $request->query->getInt('page', 1),
             3
         );
-        return $this->render('Admin/click.html.twig', [
+        return $this->render('admin/click.html.twig', [
             'productClick' => $productClick
         ]);
     }
@@ -150,7 +150,7 @@ class AdminPageController extends AbstractController
             $request->query->getInt('page', 1),
             6
         );
-        return $this->render('Admin/order.html.twig', [
+        return $this->render('admin/order.html.twig', [
             'orders' => $orders
         ]);
     }

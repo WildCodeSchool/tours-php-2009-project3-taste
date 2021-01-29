@@ -187,7 +187,7 @@ class AdminPageController extends AbstractController
                 $entityManager->flush();
                 $email = (new Email())
                     ->from('taste.mathieu@gmail.com')
-                    ->to($$user->getEmail())
+                    ->to($user->getEmail())
                     ->subject('Votre commande a été refuser')
                     ->html('Votre commande a été refuser, veuillez contacter la boutique au : 09 53 03 74 69');
                 $mailer->send($email);

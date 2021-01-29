@@ -37,22 +37,24 @@
             <tr>
                 <th>Numéro de commande</th>
                 <th>Prix Total</th>
-                <th>Heures</th>
+                <th>Date/Heure</th>
                 <th>Contenue</th>
                 <th>Valider</th>
                 <th>Actions</th>
             </tr>
             </thead>
-            <tbody>
+            <tbody class="border-bottom">
             {% for order in orders %}
                 <tr>
                     <td>{{ order.id }}</td>
                     <td>{{ order.priceTotal }}€</td>
-                    <td>{{ order.hours|date('H:i') }}</td>
+                    <td>{{ order.hours|date('d/m/Y H:i') }}</td>
                     <td>
+                        <ul class="list-group">
                     {% for item in order.cart %}
-                        <p>{{ item.product.name }}</p>
+                        <li class="list-group-item text-dark">{{ item.product.name }} x {{ item.quantity }}</li>
                     {% endfor %}
+                        </ul>
                     </td>
                     {% if order.isValided is null %}
                         <td>Non validé</td>
@@ -86,7 +88,7 @@
                 </tr>
             {% else %}
                 <tr>
-                    <td colspan="7">no records found</td>
+                    <td colspan="7">Aucune Commande</td>
                 </tr>
             {% endfor %}
             </tbody>

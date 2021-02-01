@@ -36,7 +36,7 @@
 .partner-body{
   max-width: 1200px;
   margin: 0 auto;
-  background-color: var(--main-partner-color);
+  background-color: whitesmoke;
   color: var(--primary-partner-color);
   font-family: 'Arial';
   font-style: normal;
@@ -59,7 +59,7 @@
 }
 
 .btn {
-  color: var(--main-partner-color);
+  color: var(--color-text-nav);
   padding: 0.8rem;
   font-size: 14px;
   text-transform: uppercase;
@@ -68,12 +68,12 @@
   display: block;
   width: 100%;
   cursor: pointer;
-  border: 1px solid var(--secondary-partner-color);
-  background: transparent;
+  border: 1px solid var(--color-text-nav);
+  background-color: var(--nav-background-color);
 }
 
 .btn:hover {
-  background-color: var(--secondary-partner-color);
+  background-color: #b6d452;
 }
 
 .cards {
@@ -112,11 +112,11 @@
 
 .card_content {
   padding: 1rem;
-  background: linear-gradient(to bottom left, grey 40%, grey 100%);
+  background: #ccc;
 }
 
 .card_title {
-  color: var(--main-partner-color);
+  color: var(--color-text-nav);
   font-size: 24px;
   font-weight: 700;
   letter-spacing: 1px;
@@ -125,7 +125,7 @@
 }
 
 .card_text {
-  color: var(--main-partner-color);
+  color: var(--color-text-nav);
   font-size: 16px;
   line-height: 1.5;
   margin-bottom: 1.25rem;
@@ -134,5 +134,6 @@
 
 .card:hover{
     transform: scale(1.02);
+    transition: 0.6s;
     box-shadow: 0 4px 6px 0 var(--main-partner-color);
 }

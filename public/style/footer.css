@@ -43,7 +43,7 @@ footer {
 }
 /*Restons en contact part*/
 .footerContact p{
-    padding: 15px 0px;
+    padding: 15px 0;
 }
 .listPages,
 .listSociaux{
@@ -62,14 +62,13 @@ footer {
     position: relative;
 }
 .listSociaux img {
-    margin: 0px 10px;
+    margin: 0 10px;
 }
 .listSociaux a {
     text-decoration: none;
     color: #999;
     display: flex;
     align-items: center;
-    
     padding-top: 15px;
 }
 .listSociaux li {
@@ -84,12 +83,11 @@ footer {
         width: 320px;
     }
     .bloc {
-        width: 300px;
-        margin: 0px 30px;
+        margin: 0 30px;
     }
     .bloc:nth-child(1),
     .bloc:nth-child(2) {
-        margin-bottom: 0px;
+        margin-bottom: 0;
     }
     .bloc:nth-child(1) {
         margin-top: 0;

@@ -1,0 +1,41 @@
+{% extends 'click/layout.html.twig' %}
+
+{% block title %}Taste - Click And Collect{% endblock %}
+
+{% block stylesheets %}
+  <link href="{{ 'style/footer.css' }}" rel="stylesheet">
+  <link href="{{ 'style/nav.css' }}" rel="stylesheet">
+  <link href="{{ 'style/clickStyle.css' }}" rel="stylesheet">
+{% endblock %}
+
+{% block headerTitle %}
+  <div class="home-title">
+    <h1>Taste</h1>
+    <h2>Click And Collect</h2>
+  </div>
+{% endblock %}
+
+{% block main %}
+  <span class="cart" id="cart">
+    <strong>
+      <a href="{{ path('cart_show') }}">Panier</a>
+    </strong>
+  </span>
+  <ul class="cards">
+    {% for product in products %}
+      <li class="cards_item">
+        <div class="card">
+          <div class="card_image"><img class="card-img" src="/uploads/{{ product.image }}"></div>
+          <div class="card_content">
+            <h2 class="card_title">{{ product.category }}</h2>
+            <h3 class="card_text">{{ product.name }}</h3>
+            <button class="btn card_btn" onclick="window.location.href='{{ path("cart_add", {id: product.id}) }}'">
+              {{ product.price }}€
+            </button>
+          </div>
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
+
+{% endblock %}

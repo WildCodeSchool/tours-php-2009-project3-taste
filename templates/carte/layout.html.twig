@@ -3,23 +3,7 @@
 {% block body %}
     <header>
         <div class="image-title">
-            <nav class="nav">
-                <a href="{{ path('carte') }}">Carte</a>
-                <a href="{{ path('caterer') }}">Traiteur</a>
-                <a href="{{ path('partners') }}">Partenaire</a>
-                <a href="{{ path('index') }}">🏠</a>
-                <a href="#">News</a>
-                <a href="#">Contact</a>
-                {% if app.user %}
-
-                    <a href="{{ path('app_logout') }}">  {{ app.user.name }} </a>
-
-                {% else %}
-
-                    <a href="{{ path('app_login') }}"> Se connecter</a>
-
-                {% endif %}
-            </nav>
+            {% include "_nav.html.twig" %}
             {% block headerTitle %}{% endblock %}
         </div>
         <hr>
@@ -28,32 +12,5 @@
     <main>
         {% block main %}{% endblock %}
     </main>
-    <footer class="contenuFooter">
-        <div class="bloc footerSommaire">
-            <ul class="listPages">
-                <li>
-                    <iframe width="200" height="200"
-                            src="https://www.openstreetmap.org/export/embed.html?bbox=0.6825135027793295%2C47.3942452046221%2C0.6854102885154135%2C47.39569413015929&amp;layer=transportmap&amp;marker=47.39496967237069%2C0.6839618956473714">
-                    </iframe>
-                </li>
-            </ul>
-        </div>
-        <div class="bloc footerContact">
-            <h3>Restons en Contact</h3>
-            <p>06 00 00 00 00</p>
-            <p>4 rue des Wilders, Tours, 37000</p>
-            <p>Lundi au Vendredi 10h30 à 21h00</p>
-        </div>
-        <div class="bloc footerSociaux">
-            <h3>Nos Réseaux</h3>
-            <ul class="listSociaux">
-                <li>
-                    <a href="#"><img src="../images/insta" alt="icone réseaux sociaux"></a>
-                </li>
-                <li>
-                    <a href="#"><img src="../images/facebook" alt="icone réseaux sociaux"></a>
-                </li>
-            </ul>
-        </div>
-    </footer>
+    {% include "_footer.html.twig" %}
 {% endblock %}

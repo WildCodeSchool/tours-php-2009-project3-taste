@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link href="{{ 'style/footer.css' }}" rel="stylesheet">
+    {# <link href="{{ 'style/nav.css' }}" rel="stylesheet"> #}
+{% endblock %}
+
+{% block title %}Taste - Inscription{% endblock %}
+
+{% block body %}
+    <header>
+        <div class="image-title">
+            {% include "_nav.html.twig" %}
+            {% block headerTitle %}{% endblock %}
+        </div>
+        <hr>
+    </header>
+    <main>
+        {% block main %}
+        {% for flashError in app.flashes('verify_email_error') %}
+            <div class="alert alert-danger" role="alert">{{ flashError }}</div>
+        {% endfor %}
+
+        <h1>Inscription</h1>
+
+        {{ form_start(registrationForm) }}
+            {{ form_row(registrationForm.name) }}
+            {{ form_row(registrationForm.email) }}
+            {{ form_row(registrationForm.plainPassword, {
+                label: 'Mot de passe'
+            }) }}
+            <label for="conditions"><a href="{{ path('CGU') }}"> J'accepte les conditions d'utilisation du service </a></label>
+            {{ form_row(registrationForm.agreeTerms) }}
+
+
+            <button type="submit" class="btn"> S'inscrire </button>
+        {{ form_end(registrationForm) }}
+        {% endblock %}
+    </main>
+    {% include "_footer.html.twig" %}
+{% endblock %}

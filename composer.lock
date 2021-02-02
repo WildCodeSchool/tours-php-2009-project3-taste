@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c48e2b495ae0c7ffc3c7be64e59a0efc",
+    "content-hash": "cf0143f0df887fd49299b1dfee3d073c",
     "packages": [
         {
             "name": "composer/package-versions-deprecated",
@@ -1566,6 +1566,158 @@
                 "validator"
             ],
             "time": "2020-10-31T20:37:35+00:00"
+        },
+        {
+            "name": "knplabs/knp-components",
+            "version": "v3.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/KnpLabs/knp-components.git",
+                "reference": "246b700fdc40020f1db1c887cd462b9b9d3b79b0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/KnpLabs/knp-components/zipball/246b700fdc40020f1db1c887cd462b9b9d3b79b0",
+                "reference": "246b700fdc40020f1db1c887cd462b9b9d3b79b0",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.3 || ^8.0",
+                "symfony/event-dispatcher-contracts": "^1.1 || ^2.0",
+                "symfony/http-foundation": "^4.4 || ^5.1"
+            },
+            "require-dev": {
+                "doctrine/mongodb-odm": "^2.0",
+                "doctrine/orm": "^2.7",
+                "doctrine/phpcr-odm": "^1.2",
+                "jackalope/jackalope-doctrine-dbal": "^1.2",
+                "phpunit/phpunit": "^9.4",
+                "ruflin/elastica": "^1.0",
+                "symfony/http-kernel": "^4.4 || ^5.1",
+                "symfony/property-access": "^4.4 || ^5.1"
+            },
+            "suggest": {
+                "doctrine/common": "to allow usage pagination with Doctrine ArrayCollection",
+                "doctrine/mongodb-odm": "to allow usage pagination with Doctrine ODM MongoDB",
+                "doctrine/orm": "to allow usage pagination with Doctrine ORM",
+                "doctrine/phpcr-odm": "to allow usage pagination with Doctrine ODM PHPCR",
+                "propel/propel1": "to allow usage pagination with Propel ORM",
+                "ruflin/elastica": "to allow usage pagination with ElasticSearch Client",
+                "solarium/solarium": "to allow usage pagination with Solarium Client",
+                "symfony/property-access": "To allow sorting arrays"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Knp\\Component\\": "src/Knp/Component"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "KnpLabs Team",
+                    "homepage": "https://knplabs.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://github.com/KnpLabs/knp-components/contributors"
+                }
+            ],
+            "description": "Knplabs component library",
+            "homepage": "http://github.com/KnpLabs/knp-components",
+            "keywords": [
+                "components",
+                "knp",
+                "knplabs",
+                "pager",
+                "paginator"
+            ],
+            "support": {
+                "issues": "https://github.com/KnpLabs/knp-components/issues",
+                "source": "https://github.com/KnpLabs/knp-components/tree/v3.0.0"
+            },
+            "time": "2020-11-30T09:24:34+00:00"
+        },
+        {
+            "name": "knplabs/knp-paginator-bundle",
+            "version": "v5.4.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/KnpLabs/KnpPaginatorBundle.git",
+                "reference": "8a7255062dd9f6ff8a3a4712a4b34bdbbc9f31f7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/KnpLabs/KnpPaginatorBundle/zipball/8a7255062dd9f6ff8a3a4712a4b34bdbbc9f31f7",
+                "reference": "8a7255062dd9f6ff8a3a4712a4b34bdbbc9f31f7",
+                "shasum": ""
+            },
+            "require": {
+                "knplabs/knp-components": "^2.4 || ^3.0",
+                "php": "^7.3 || ^8.0",
+                "symfony/config": "^4.4 || ^5.0",
+                "symfony/dependency-injection": "^4.4 || ^5.0",
+                "symfony/event-dispatcher": "^4.4 || ^5.0",
+                "symfony/http-foundation": "^4.4 || ^5.0",
+                "symfony/http-kernel": "^4.4 || ^5.0",
+                "symfony/routing": "^4.4 || ^5.0",
+                "symfony/translation": "^4.4 || ^5.0",
+                "twig/twig": "^2.0 || ^3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^8.5 || ^9.4",
+                "symfony/expression-language": "^4.4 || ^5.0",
+                "symfony/templating": "^4.4 || ^5.0"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "5.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Knp\\Bundle\\PaginatorBundle\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "KnpLabs Team",
+                    "homepage": "http://knplabs.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "http://github.com/KnpLabs/KnpPaginatorBundle/contributors"
+                }
+            ],
+            "description": "Paginator bundle for Symfony to automate pagination and simplify sorting and other features",
+            "homepage": "http://github.com/KnpLabs/KnpPaginatorBundle",
+            "keywords": [
+                "bundle",
+                "knp",
+                "knplabs",
+                "pager",
+                "pagination",
+                "paginator",
+                "symfony"
+            ],
+            "support": {
+                "issues": "https://github.com/KnpLabs/KnpPaginatorBundle/issues",
+                "source": "https://github.com/KnpLabs/KnpPaginatorBundle/tree/v5.4.2"
+            },
+            "time": "2020-12-17T08:19:16+00:00"
         },
         {
             "name": "laminas/laminas-code",
@@ -3567,16 +3719,16 @@
         },
         {
             "name": "symfony/form",
-            "version": "v5.1.8",
+            "version": "v5.1.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/form.git",
-                "reference": "3f61496220b9f8672ede9b9acfb87a06c0c752f2"
+                "reference": "a75921b3c47a431b97aa4b8051893491ceb0a2aa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/form/zipball/3f61496220b9f8672ede9b9acfb87a06c0c752f2",
-                "reference": "3f61496220b9f8672ede9b9acfb87a06c0c752f2",
+                "url": "https://api.github.com/repos/symfony/form/zipball/a75921b3c47a431b97aa4b8051893491ceb0a2aa",
+                "reference": "a75921b3c47a431b97aa4b8051893491ceb0a2aa",
                 "shasum": ""
             },
             "require": {
@@ -3614,7 +3766,7 @@
                 "symfony/http-kernel": "^4.4|^5.0",
                 "symfony/security-csrf": "^4.4|^5.0",
                 "symfony/translation": "^4.4|^5.0",
-                "symfony/validator": "^4.4.12|^5.1.6",
+                "symfony/validator": "^4.4.17|^5.1.9",
                 "symfony/var-dumper": "^4.4|^5.0"
             },
             "suggest": {
@@ -3647,6 +3799,9 @@
             ],
             "description": "Symfony Form Component",
             "homepage": "https://symfony.com",
+            "support": {
+                "source": "https://github.com/symfony/form/tree/v5.1.10"
+            },
             "funding": [
                 {
                     "url": "https://symfony.com/sponsor",
@@ -3661,7 +3816,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-10-28T05:25:38+00:00"
+            "time": "2020-12-18T08:02:46+00:00"
         },
         {
             "name": "symfony/framework-bundle",
@@ -3789,6 +3944,71 @@
             ],
             "description": "Symfony FrameworkBundle",
             "homepage": "https://symfony.com",
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2020-10-24T12:01:57+00:00"
+        },
+        {
+            "name": "symfony/google-mailer",
+            "version": "v5.1.10",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/google-mailer.git",
+                "reference": "9f459cbd57dd33a70fd8aa475575641ea4ae3369"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/google-mailer/zipball/9f459cbd57dd33a70fd8aa475575641ea4ae3369",
+                "reference": "9f459cbd57dd33a70fd8aa475575641ea4ae3369",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2.5",
+                "symfony/mailer": "^4.4|^5.0"
+            },
+            "require-dev": {
+                "symfony/http-client": "^4.4|^5.0"
+            },
+            "type": "symfony-bridge",
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Mailer\\Bridge\\Google\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Google Mailer Bridge",
+            "homepage": "https://symfony.com",
+            "support": {
+                "source": "https://github.com/symfony/google-mailer/tree/v5.2.0"
+            },
             "funding": [
                 {
                     "url": "https://symfony.com/sponsor",
@@ -4228,16 +4448,16 @@
         },
         {
             "name": "symfony/mailer",
-            "version": "v5.1.8",
+            "version": "v5.1.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/mailer.git",
-                "reference": "fa5cc9f894a5d082e7e46bfdd44f5dd83529f0ba"
+                "reference": "bc6c244e27dbb1d843565b9905e50f318a9e675c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/mailer/zipball/fa5cc9f894a5d082e7e46bfdd44f5dd83529f0ba",
-                "reference": "fa5cc9f894a5d082e7e46bfdd44f5dd83529f0ba",
+                "url": "https://api.github.com/repos/symfony/mailer/zipball/bc6c244e27dbb1d843565b9905e50f318a9e675c",
+                "reference": "bc6c244e27dbb1d843565b9905e50f318a9e675c",
                 "shasum": ""
             },
             "require": {
@@ -4287,6 +4507,9 @@
             ],
             "description": "Symfony Mailer Component",
             "homepage": "https://symfony.com",
+            "support": {
+                "source": "https://github.com/symfony/mailer/tree/v5.1.10"
+            },
             "funding": [
                 {
                     "url": "https://symfony.com/sponsor",
@@ -4301,7 +4524,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-10-24T12:01:57+00:00"
+            "time": "2020-12-18T08:02:46+00:00"
         },
         {
             "name": "symfony/mime",
@@ -7062,6 +7285,107 @@
                 }
             ],
             "time": "2020-10-24T12:03:25+00:00"
+        },
+        {
+            "name": "symfonycasts/reset-password-bundle",
+            "version": "v1.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/SymfonyCasts/reset-password-bundle.git",
+                "reference": "73d55cf1637328b6243bf97ef9f9e3ff392a498d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/SymfonyCasts/reset-password-bundle/zipball/73d55cf1637328b6243bf97ef9f9e3ff392a498d",
+                "reference": "73d55cf1637328b6243bf97ef9f9e3ff392a498d",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2.5",
+                "symfony/config": "^4.4 | ^5.0",
+                "symfony/dependency-injection": "^4.4 | ^5.0",
+                "symfony/deprecation-contracts": "^2.2",
+                "symfony/http-kernel": "^4.4 | ^5.0"
+            },
+            "conflict": {
+                "doctrine/orm": "<2.7",
+                "symfony/framework-bundle": "<4.4",
+                "symfony/http-foundation": "<4.4"
+            },
+            "require-dev": {
+                "doctrine/doctrine-bundle": "^2.0.3",
+                "doctrine/orm": "^2.7",
+                "friendsofphp/php-cs-fixer": "^2.17",
+                "symfony/framework-bundle": "^4.4 | ^5.0",
+                "symfony/phpunit-bridge": "^5.0",
+                "vimeo/psalm": "^4.3"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-4": {
+                    "SymfonyCasts\\Bundle\\ResetPassword\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Symfony bundle that adds password reset functionality.",
+            "support": {
+                "issues": "https://github.com/SymfonyCasts/reset-password-bundle/issues",
+                "source": "https://github.com/SymfonyCasts/reset-password-bundle/tree/v1.3.0"
+            },
+            "time": "2021-01-15T16:49:22+00:00"
+        },
+        {
+            "name": "symfonycasts/verify-email-bundle",
+            "version": "v1.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/SymfonyCasts/verify-email-bundle.git",
+                "reference": "56fc933ce984c005988a4a72e1aa00731e0884e0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/SymfonyCasts/verify-email-bundle/zipball/56fc933ce984c005988a4a72e1aa00731e0884e0",
+                "reference": "56fc933ce984c005988a4a72e1aa00731e0884e0",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2.5",
+                "symfony/config": "^4.4 | ^5.0",
+                "symfony/dependency-injection": "^4.4 | ^5.0",
+                "symfony/deprecation-contracts": "^2.2",
+                "symfony/http-kernel": "^4.4 | ^5.0",
+                "symfony/routing": "^4.4 | ^5.0"
+            },
+            "conflict": {
+                "symfony/framework-bundle": "<4.4"
+            },
+            "require-dev": {
+                "doctrine/orm": "^2.7",
+                "doctrine/persistence": "^2.0",
+                "friendsofphp/php-cs-fixer": "^2.17",
+                "symfony/framework-bundle": "^4.4 | ^5.0",
+                "symfony/phpunit-bridge": "^5.0",
+                "vimeo/psalm": "^4.3"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-4": {
+                    "SymfonyCasts\\Bundle\\VerifyEmail\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Simple, stylish Email Verification for Symfony",
+            "support": {
+                "issues": "https://github.com/SymfonyCasts/verify-email-bundle/issues",
+                "source": "https://github.com/SymfonyCasts/verify-email-bundle/tree/v1.1.1"
+            },
+            "time": "2020-12-18T14:57:31+00:00"
         },
         {
             "name": "twig/extra-bundle",

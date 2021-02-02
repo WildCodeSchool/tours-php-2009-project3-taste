@@ -13,7 +13,7 @@ class MenuFixtures extends Fixture
 {
     public function load(ObjectManager $manager)
     {
-        $faker = Faker\Factory::create('en_US');
+        /*$faker = Faker\Factory::create('en_US');
 
         for ($i = 0; $i < 10; $i++) {
             $product = new Product();
@@ -25,6 +25,6 @@ class MenuFixtures extends Fixture
             $product->setGroupDescription($faker->realText(40, 2));
             $manager->persist($product);
         }
-        $manager->flush();
+        $manager->flush();*/
     }
 }

@@ -11,7 +11,7 @@ class CategoryFixtures extends Fixture
 {
     public function load(ObjectManager $manager): void
     {
-        $faker = Faker\Factory::create('en_US');
+        /*$faker = Faker\Factory::create('en_US');
 
         for ($i = 0; $i < 5; $i++) {
             $category = new Category();
@@ -25,9 +25,9 @@ class CategoryFixtures extends Fixture
         $category->setDescription($faker->realText(40));
         $category->setMinPrice($faker->randomFloat(3, 2, 15));
         $category->setMaxPrice($faker->randomFloat(3, 2, 15));
-        $this->addReference('category_' . $i, $category);
+        $this->addReference('category_6', $category);
         $manager->persist($category);
 
-        $manager->flush();
+        $manager->flush();*/
     }
 }

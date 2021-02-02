@@ -32,6 +32,9 @@
   z-index: 10;
 }
 
+body{
+  background-color: #a2c433;
+}
 /* Body */
 .partner-body{
   max-width: 1200px;
@@ -40,21 +43,20 @@
   color: var(--primary-partner-color);
   font-family: 'Arial';
   font-style: normal;
-  font-weight: 500;
-  padding: 1rem;
+  padding: 2.5rem;
   text-align: justify;
 }
 
-.partners-title {
-    font-size: 32px;
-    font-weight: 400;
-    font-weight: bold;
-    text-align: center;
+ .partner-body > p{
+  padding-left: 3rem;
+  padding-right: 3rem;
 }
 
+
+
 .card-img{
-  width: 400px;
-  height: 300px;
+  width: 60vh;
+  height: 40vh;
   vertical-align: middle;
 }
 
@@ -73,7 +75,7 @@
 }
 
 .btn:hover {
-  background-color: #b6d452;
+  background-color: #a2c433;
 }
 
 .cards {
@@ -81,7 +83,7 @@
   flex-wrap: wrap;
   list-style: none;
   margin: 0;
-  padding: 0;
+  padding: 1.5rem;
 }
 
 .cards_item {
@@ -89,7 +91,13 @@
   padding: 1rem;
 }
 
-@media (min-width: 40rem) {
+@media screen and (min-width: 36rem) {
+  .cards_item {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 40rem) {
   .cards_item {
     width: 50%;
   }
@@ -97,13 +105,13 @@
 
 @media (min-width: 56rem) {
   .cards_item {
-    width: 33.3333%;
+    width: 33.33%;
   }
 }
 
 .card {
   background-color: var(--main-partner-color);
-  border-radius: 0.5rem;
+  border-radius: 1rem;
   box-shadow: 0 20px 40px -14px var(--shadow-color);
   display: flex;
   flex-direction: column;
@@ -118,18 +126,16 @@
 .card_title {
   color: var(--color-text-nav);
   font-size: 24px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  text-transform: capitalize;
-  margin: 0px;
+  font-style: italic;
+  text-align: center;
 }
 
 .card_text {
   color: var(--color-text-nav);
   font-size: 16px;
-  line-height: 1.5;
   margin-bottom: 1.25rem;
-  font-weight: 400;
+  padding: 1.25rem;
+  text-align: justify;
 }
 
 .card:hover{

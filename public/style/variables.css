@@ -2,13 +2,16 @@
     /* VARIABLE FOR NAVBAR */
     --nav-background-color: rgba(196, 196, 196, 0.9);
 
-    /* VARIABLE FOR HOME PAGE*/
+    /* VARIABLE FOR PAGE*/
     --color-title-header: #fff;
     --color-text-nav: rgb(99, 96, 96);
     --title-background-color: rgba(196, 196, 196, 0.5);
-    --button-about-us-color: #D35900;
+    --button-about-us-color: #;
     --text-color-about-us: #fff;
     --main-background-color: #94AC00;
+    --body-background-color: #BADA55;
+    --font-color-blue: #5c97bf;
+    --background-content: #f0f0d6;
 
     /* VARIABLE FOR PARTNER PAGE*/
     --main-partner-color: white;

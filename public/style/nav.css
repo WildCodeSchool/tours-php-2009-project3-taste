@@ -1,4 +1,5 @@
 @import 'variables.css';
+@import 'fontFamily.css';
 
 * {
     box-sizing: border-box;
@@ -24,6 +25,14 @@
 .nav_bar a {
     text-decoration: none;
     color: var(--color-text-nav);
+    transition: transform .5s;
+    font-family: 'Inconsolata', monospace;
+}
+
+.navBar a:hover {
+  text-decoration: none;
+  color: var(--color-text-nav);
+  transform: scale(1.05);
 }
 
 /* Image Home Taste */

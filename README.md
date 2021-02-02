@@ -29,10 +29,27 @@ It's symfony website-skeleton project with some additional tools to validate cod
 
 ### Install
 
-1. Clone this project
-2. Run `composer install`
-3. Run `yarn install`
-4. Run `yarn encore dev` to build assets
+1. Clone the current repository.
+2. In MySQL, create a database `taste` and create a new user and gives it the rights.
+3. In the project directory, create a `.env.local` (copy the `.env` content) and modified the line 32:
+  set: `db_user`
+       `db_password`
+       `db_name`
+4. Uncomment line 24, and add: `MAILER_DSN=gmail+smtp://email:password@default`
+5. Execute this command:
+```
+# Install dependencies
+composer install
+
+yarn install
+yarn encore dev
+
+# Create Database
+symfony console d:d:c
+
+# Make migrations
+symfony console d:m:m
+```
 
 ### Working
 

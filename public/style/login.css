@@ -2,9 +2,8 @@
 
 main {
     font-family: "Open Sans", sans-serif;
-    height: 100vh;
-    background: url('../images/login.jpeg') no-repeat fixed center;
-    background-size: cover;
+    height: 100%;
+    color: var(--color-text-nav);
 }
 
 @keyframes button {
@@ -16,53 +15,73 @@ main {
     box-sizing: border-box;
 }
 
-.wrapper {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-    width: 100%;
-    min-height: 100%;
-    padding: 20px;
+.background {
+    /* The image used */
+    background-image: url('../images/caterer/image--003.jpg');
+
+    /* Add the blur effect */
+    filter: blur(2px);
+    -webkit-filter: blur(2px);
+
+    /* Full height */
+    height: 100vh;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
+.wrapper {
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    box-shadow: 10px 10px 19px -5px rgba(0,0,0,0.58);
+}
 
 .login {
     border-radius: 2px 2px 5px 5px;
-    width: 90%;
     max-width: 320px;
-    background: #ffffff;
+    background: whitesmoke;
     position: relative;
     padding: 10px 20px 80px;
-    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+    box-shadow: 10px 10px 19px -5px rgba(0,0,0,0.58);
 }
 
 input {
-    display: block;
     padding: 15px 10px;
     margin-bottom: 10px;
     width: 100%;
-    border: 1px solid #ddd;
-    transition: border-width 0.2s ease;
-    border-radius: 2px;
-    color: #ccc;
+    border: none;
+    border-bottom: 1px solid black;
+    background: #95ac009a;
+    box-sizing: border-box;
+}
+
+label {
+    text-align: left;
+}
+
+textarea:focus, input:focus{
+    outline: none;
 }
 
 .title {
-    color: #444;
     font-size: 1.2em;
     font-weight: bold;
-    margin: 10px 0 30px 0;
-    padding-bottom: 20px;
     text-align: center;
+    margin-bottom: 30px;
+    color: var(--color-text-nav);
 }
 
 button {
     width: 100%;
     height: 100%;
     padding: 10px 10px;
-    background: blue;
-    color: #fff;
+    background: #94AC00;
     display: block;
     margin-top: 20px;
     position: absolute;
@@ -74,6 +93,7 @@ button {
     transform: rotateZ(0deg);
     transition: all 0.1s ease-out;
     border-bottom-width: 7px;
+    cursor: pointer;
 }
 
 .spinner {
@@ -96,7 +116,13 @@ button {
     box-shadow: 0 1px 0 rgba(0,0,0,0.2);
 }
 
-.password-lost {
+.password-lost, .registration {
     margin-bottom: 0.5em;
     margin-top: 0.5em;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-text-nav);
 }

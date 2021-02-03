@@ -2,7 +2,8 @@
 
 {% block stylesheets %}
     <link href="{{ 'style/footer.css' }}" rel="stylesheet">
-    {# <link href="{{ 'style/nav.css' }}" rel="stylesheet"> #}
+    <link href="{{ 'style/nav.css' }}" rel="stylesheet">
+    <link href="{{ 'style/registration.css' }}" rel="stylesheet">
 {% endblock %}
 
 {% block title %}Taste - Inscription{% endblock %}
@@ -20,21 +21,22 @@
         {% for flashError in app.flashes('verify_email_error') %}
             <div class="alert alert-danger" role="alert">{{ flashError }}</div>
         {% endfor %}
-
+        <div class="registration">
         <h1>Inscription</h1>
 
         {{ form_start(registrationForm) }}
-            {{ form_row(registrationForm.name) }}
-            {{ form_row(registrationForm.email) }}
-            {{ form_row(registrationForm.plainPassword, {
+            <div class="name">{{ form_row(registrationForm.name) }}</div>
+            <div class="email">{{ form_row(registrationForm.email) }}</div>
+            <div class="password">{{ form_row(registrationForm.plainPassword, {
                 label: 'Mot de passe'
-            }) }}
-            <label for="conditions"><a href="{{ path('CGU') }}"> J'accepte les conditions d'utilisation du service </a></label>
-            {{ form_row(registrationForm.agreeTerms) }}
-
+            }) }}</div>
+            <div class="condition">{{ form_row(registrationForm.agreeTerms, {label: 'acceptez-vous les conditions --> '}) }}
+                <label for="conditions"><a href="{{ path('CGU') }}">Les conditions d'utilisation du service </a></label>
+            </div>
 
             <button type="submit" class="btn"> S'inscrire </button>
         {{ form_end(registrationForm) }}
+        </div>
         {% endblock %}
     </main>
     {% include "_footer.html.twig" %}

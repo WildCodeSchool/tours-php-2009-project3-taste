@@ -1,0 +1,28 @@
+/* Image background in header */
+.image-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    background: url('../images/reserved-table-restaurant.jpg') no-repeat fixed center;
+    min-height: 850px;
+    background-size: cover;
+}
+.registration {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+h1, .name, .email, .password {
+    margin-bottom: 1em;
+}
+.condition {
+    display: flex;
+    flex-direction: row;
+}
+.btn {
+    margin-top: 1em;
+}

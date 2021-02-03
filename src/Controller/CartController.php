@@ -47,7 +47,9 @@ class CartController extends AbstractController
     public function clickAdd(int $id, CartService $cartService): RedirectResponse
     {
         $cartService->add($id);
-        return $this->redirectToRoute('cart_index');
+        return $this->redirectToRoute('cart_index', [
+          '_fragment' => 'cart'
+        ]);
     }
 
     /**

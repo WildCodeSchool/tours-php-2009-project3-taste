@@ -1,17 +1,17 @@
-<nav class="nav">
+<nav class="nav_bar">
     <a href="{{ path('carte') }}">Carte</a>
     <a href="{{ path('caterer') }}">Traiteur</a>
-    <a href="{{ path('cart_index') }}">Click'n Collect</a>
+    <a href="{{ path('cart_index') }}">Click&Collect</a>
     <a href="{{ path('index') }}"><img src = "{{ ('images/taste-logo.jpg') }}" class="image-home" alt="logo home" width="55" height="55"/></a>
-    <a href="{{ path('news') }}">News</a>
+    <a href="{{ path('news') }}">Réseaux</a>
     <a href="{{ path('partners') }}">Partenaire</a>
     {% if app.user %}
 
-        <a href="{{ path('app_logout') }}">Déconnexion</a>
+        <a href="{{ path('app_logout') }}">Se Déconnecter</a>
 
     {% else %}
 
-        <a href="{{ path('app_login') }}"> Connexion</a>
+        <a href="{{ path('app_login') }}">Connexion</a>
 
     {% endif %}
 </nav>

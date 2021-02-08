@@ -1,5 +1,9 @@
 @import 'variables.css';
 
+@media (min-width:1000px) {
+
+
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -41,8 +45,8 @@
 
 .carte-list {
     display: flex;
-    height: 50vh;
     max-height: 100vh;
+    height: 100vh;
     margin: 0;
     padding: 0;
     overflow: hidden;
@@ -86,7 +90,6 @@ li:not(.active) > .section-content {
 
 li.carte  {
     position: relative;
-    height: 50vh;
 }
 
 li.carte  .section-title {
@@ -161,4 +164,171 @@ li .section-content > div {
 .product-ingredients {
     font-size: 0.6rem;
     margin-bottom: 0.5rem;
+}
+
+}
+@media (max-width: 999px){
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        /* Image background in header */
+        .image-title {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+            background: url('../images/churros.jpg') no-repeat fixed center;
+            min-height: 850px;
+            background-size: cover;
+        }
+
+        /* Title in Header */
+        .home-title {
+            padding: 100px;
+            text-align: center;
+            font-family: 'Inconsolata', monospace;
+            color: var(--color-title-header);
+            background: var(--title-background-color) fixed center;
+            background-size: cover;
+            box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+            -webkit-backdrop-filter: blur(2px);
+            z-index: 10;
+        }
+        .carte-body {
+            font-family: 'Lato';
+            -webkit-font-smoothing: antialiased;
+            -moz-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizelegibility;
+            margin: 0;
+            padding: 0;
+            background-color:black;
+        }
+
+        .carte-list {
+            display: flex;
+            max-height: 100vh;
+            height: 50vh;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            list-style-type: none;
+        }
+
+        li.carte  {
+            flex: 1;
+            display: flex;
+            align-items: stretch;
+            background: var(--main-background-color);
+            cursor: pointer;
+            transition: all 0.5s ease;
+        }
+
+        li.carte:hover {
+            background: #95ac009f;
+        }
+
+        li.carte.active {
+            flex: 20;
+            background: #fff;
+            cursor: default;
+        }
+
+        li.carte.active h2 {
+            color: var(--main-background-color);
+        }
+
+        li.carte.active .section-content {
+            width: 100%;
+            padding: 0 30px;
+            opacity: 1;
+            transform: scaleX(1);
+            color: grey;
+        }
+
+        li:not(.active) > .section-content {
+            display: none;
+        }
+
+        li.carte  {
+            position: relative;
+            height: 50vh;
+        }
+
+        li.carte  .section-title {
+            display: block;
+            width: 50px;
+            margin: 0;
+            padding: 0;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        li.carte  .section-title h2 {
+
+            position: absolute;
+            text-align: center;
+            width: 70vh;
+            top: 50%;
+            left: 25px;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+            transform: translateX(-50%) translateY(-50%) rotate(-90deg);
+        }
+
+        li .section-content {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+            opacity: 0;
+            transition: all 0.25s 0.1s ease-out;
+        }
+
+        li .section-content > div {
+            width: 100%;
+            padding: 0 10%;
+        }
+
+        .product {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .product div {
+            margin: 5px 0;
+
+        }
+
+        .category-description {
+            margin-top: 30px;
+            font-size: 0.80rem;
+        }
+
+        .group-name {
+            font-weight: bold;
+            font-size: 1rem;
+
+            width: 100%;
+            margin: 30px 0 10px 0;
+            padding: 5px 0;
+        }
+
+        .group-description {
+            font-size: 0.8rem;
+        }
+
+        .category-range-price {
+            margin: 5px 0;
+        }
+
+        .product-ingredients {
+            font-size: 0.6rem;
+            margin-bottom: 0.5rem;
+        }
+    }
 }

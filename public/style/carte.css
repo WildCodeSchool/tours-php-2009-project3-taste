@@ -41,7 +41,7 @@
 
 .carte-list {
     display: flex;
-    min-height: 100vh;
+    height: 50vh;
     max-height: 100vh;
     margin: 0;
     padding: 0;
@@ -86,6 +86,7 @@ li:not(.active) > .section-content {
 
 li.carte  {
     position: relative;
+    height: 50vh;
 }
 
 li.carte  .section-title {
@@ -160,8 +161,4 @@ li .section-content > div {
 .product-ingredients {
     font-size: 0.6rem;
     margin-bottom: 0.5rem;
-}
-
-.carte-list{
-    margin-top: 56px;
 }

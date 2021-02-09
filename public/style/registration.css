@@ -94,5 +94,7 @@ input {
 }
 
 @media screen and (max-width: 1000px) {
-
+    .registration {
+        padding: 100px 50px;
+    }
 }

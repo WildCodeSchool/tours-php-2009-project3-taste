@@ -8,10 +8,15 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
+/**
+ * Class ProfileUserController
+ * @package App\Controller
+ * @Route ("/profil", name="profil_")
+ */
 class ProfileUserController extends AbstractController
 {
     /**
-     * @Route("/profile", name="profile")
+     * @Route("/", name="index")
      * @param OrderRepository $orderRepository
      * @return Response
      */
@@ -32,7 +37,7 @@ class ProfileUserController extends AbstractController
     }
 
     /**
-     * @Route("/profile/history", name="profile_history")
+     * @Route("/history", name="history")
      * @param OrderRepository $orderRepository
      * @return Response
      */

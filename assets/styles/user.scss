@@ -1,3 +1,29 @@
+/* Image background in header */
+.image-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  background: url('/images/caterer/image--002.jpg') no-repeat fixed center;
+  min-height: 850px;
+  background-size: cover;
+  box-shadow: 10px 10px 19px -5px rgba(0,0,0,0.6);
+  border: none;
+}
+
+/* Title in Header */
+.home-title {
+  padding: 100px;
+  text-align: center;
+  font-family: 'Inconsolata', monospace;
+  color: var(--color-title-header);
+  background: var(--title-background-color) fixed center;
+  background-size: cover;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  -webkit-backdrop-filter: blur(2px);
+  z-index: 10;
+}
+
 
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
@@ -10,23 +36,45 @@ h1, h2, h3, h4, h5, h6 {
   margin:30px auto;
   position:relative;
   overflow:hidden;
-  max-width: 300px;
+  width: 80%;
 }
+
+.history {
+  background-color: grey;
+  width: 100%;
+}
+
+table {
+  width: 100%;
+}
+
+.history td, .history th {
+  border: 1px solid #ddd;
+  border-top: none;
+  padding: 8px;
+  color: white;
+}
+
+.history tr:nth-child(even){background-color: #f2f2f2;}
+
+.history tr:hover {background-color: #ddd;}
+
+.history th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #94AC00;
+  color: white;
+}
+
 .profile-block .user-heading {
-  background: #c5251e none repeat scroll 0 0;
+  background: #94AC00 none repeat scroll 0 0;
   border-radius: 4px 4px 0 0;
   color: #fff;
   padding: 20px;
   text-align: center;
 }
-.profile-block .user-heading a img {
-  border-radius: 50%;
-  margin:auto auto 10px;
-  display: block;
-  height: 140px;
-  width: 140px;
-  border: 10px solid rgba(255, 255, 255, 0.3);
-}
+
 .profile-block .user-heading h1 {
   color: #fff;
   font-size: 20px;
@@ -58,7 +106,7 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 14px;
   padding: 6px 18px;
   position: relative;
-  text-align: left;
+  text-align: center;
   text-decoration: none;
 }
 .profile-block ul > li > a > i {

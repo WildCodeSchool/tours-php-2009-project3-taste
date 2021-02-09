@@ -21,7 +21,13 @@
                         <a href="{{ path('carte') }}">Carte</a>
                     </li>
                     <li>
-                        <a href="{{ path('caterer') }}">Traiteur</a>
+                        <a href="{{ path('cart_index') }}">Click&Collect</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('caterer') }}">News</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('partners') }}">Partenaire</a>
                     </li>
                 </ul>
             </li>
@@ -37,9 +43,17 @@
             <li>
                 <a href="{{ path('admin_click_index') }}">Click & Collect</a>
             </li>
+            <li>
+                <a href="{{ path('admin_order') }}">Commandes</a>
+            </li>
         </ul>
     </nav>
     <main>
+        {% for message in app.flashes('success') %}
+            <div class="alert alert-success">
+                {{ message }}
+            </div>
+        {% endfor %}
         {% block main %}{% endblock %}
     </main>
 </div>

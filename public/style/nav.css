@@ -1,4 +1,5 @@
 @import 'variables.css';
+@import 'fontFamily.css';
 
 * {
     box-sizing: border-box;
@@ -6,7 +7,7 @@
     padding: 0;
 }
 
-.nav {
+.nav_bar {
     display: flex;
     position: fixed;
     top: 0;
@@ -21,9 +22,17 @@
     box-shadow: 0px 2px 20px 5px rgba(94,94,94,1);
 }
 
-.nav a {
+.nav_bar a {
     text-decoration: none;
     color: var(--color-text-nav);
+    transition: transform .5s;
+    font-family: 'Inconsolata', monospace;
+}
+
+.navBar a:hover {
+  text-decoration: none;
+  color: var(--color-text-nav);
+  transform: scale(1.05);
 }
 
 /* Image Home Taste */

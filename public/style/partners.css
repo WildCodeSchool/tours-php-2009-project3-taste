@@ -55,7 +55,7 @@ body{
 
 
 .card-img{
-  width: 60vh;
+  width: 46vh;
   height: 40vh;
   vertical-align: middle;
 }
@@ -72,6 +72,7 @@ body{
   cursor: pointer;
   border: 1px solid var(--color-text-nav);
   background-color: var(--nav-background-color);
+
 }
 
 .btn:hover {
@@ -120,7 +121,7 @@ body{
 
 .card_content {
   padding: 1rem;
-  background: #ccc;
+  background-color: #ccc;
 }
 
 .card_title {

@@ -16,7 +16,9 @@ class ProductClickType extends AbstractType
     {
         $builder
             ->add('name', TextType::class)
-            ->add('image', FileType::class)
+            ->add('image', FileType::class, [
+                'mapped' => false,
+            ])
             ->add('price', MoneyType::class)
             ->add('category', TextType::class)
         ;

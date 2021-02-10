@@ -1,32 +1,91 @@
-
-h1, h2, h3, h4, h5, h6 {
-  margin: 0;
-  padding: 0;
-  line-height: .9;
-  font-weight: 700;
-  color: #333;
+/* Image background in header */
+.image-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  background: url('/images/caterer/image--002.jpg') no-repeat fixed center, #95ac009a;
+  min-height: 850px;
+  background-size: cover;
+  box-shadow: 10px 10px 19px -5px rgba(0,0,0,0.6);
+  border: none;
 }
+
+/* Title in Header */
+.home-title {
+  padding: 100px;
+  text-align: center;
+  font-family: 'Inconsolata', monospace;
+  color: var(--color-title-header);
+  background: var(--title-background-color) fixed center;
+  background-size: cover;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  -webkit-backdrop-filter: blur(2px);
+  z-index: 10;
+}
+
+* {
+  text-align: center;
+}
+
+header {
+  background-color: #93AB00;
+  margin: 0;
+}
+
+main {
+  background-color: #93AB00;
+}
+
+.user-heading {
+  width: 100%;
+}
+
 .profile-block{
-  margin:30px auto;
   position:relative;
   overflow:hidden;
-  max-width: 300px;
+  width: 100%;
+  margin-top: -21px;
 }
+
+.history {
+  background-color: #95ac009a;
+  width: 100%;
+}
+
+.panel {
+  border: none;
+}
+
+table {
+  width: 100%;
+}
+
+.history td, .history th {
+  border: none;
+  padding: 8px;
+  color: white;
+}
+
+.history tr:nth-child(odd){background-color: #768a00; z-index: 100}
+
+.history tr:hover {background-color: rgb(230, 150, 1);}
+
+.history th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #94AC00;
+  color: white;
+}
+
 .profile-block .user-heading {
-  background: #c5251e none repeat scroll 0 0;
-  border-radius: 4px 4px 0 0;
+  background: #94AC00 none repeat scroll 0 0;
   color: #fff;
   padding: 20px;
   text-align: center;
 }
-.profile-block .user-heading a img {
-  border-radius: 50%;
-  margin:auto auto 10px;
-  display: block;
-  height: 140px;
-  width: 140px;
-  border: 10px solid rgba(255, 255, 255, 0.3);
-}
+
 .profile-block .user-heading h1 {
   color: #fff;
   font-size: 20px;
@@ -46,19 +105,19 @@ h1, h2, h3, h4, h5, h6 {
   margin:0;
 }
 .profile-block ul > li {
-  border-bottom: 1px solid #ddd;
   line-height: 30px;
   margin-top: 0;
 }
+
 .profile-block .nav > li > a {
-  background: #e7e7e7;
+  background: #94AC00;
   border-radius: 0;
-  color: #000;
+  color: white;
   display: block;
   font-size: 14px;
   padding: 6px 18px;
   position: relative;
-  text-align: left;
+  text-align: center;
   text-decoration: none;
 }
 .profile-block ul > li > a > i {
@@ -69,7 +128,17 @@ h1, h2, h3, h4, h5, h6 {
 .profile-block ul > li > a:hover,
 .profile-block ul > li > a:focus,
 .profile-block ul li.active a {
-  background: #fff !important;
+  background: rgb(230, 150, 1) !important;
   border-radius: 0;
-  color: #000 !important;
+  color: white !important;
+}
+
+.page a {
+  text-decoration: none;
+  color: white;
+}
+
+.page a:hover {
+  text-decoration: underline;
+  color: black;
 }

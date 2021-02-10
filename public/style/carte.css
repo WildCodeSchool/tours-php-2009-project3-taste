@@ -3,8 +3,6 @@
 
 @media (min-width:1000px) {
 
-
-
 * {
     box-sizing: border-box;
     margin: 0;
@@ -16,7 +14,7 @@
     align-items: center;
     justify-content: center;
     z-index: 10;
-    background: url('../images/churros.jpg') no-repeat fixed center;
+    background: url('../images/IMG_5063.jpg') no-repeat fixed center;
     min-height: 850px;
     background-size: cover;
 }
@@ -34,7 +32,7 @@
     z-index: 10;
 }
 .carte-body {
-    font-family: 'Lato';
+    font-family: 'Raleway', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -189,7 +187,7 @@ li .section-content > div {
         .home-title {
             padding: 100px;
             text-align: center;
-            font-family: 'Inconsolata', monospace;
+            font-family: 'Raleway', sans-serif;
             color: var(--color-title-header);
             background: var(--title-background-color) fixed center;
             background-size: cover;
@@ -198,7 +196,7 @@ li .section-content > div {
             z-index: 10;
         }
         .carte-body {
-            font-family: 'Lato';
+            font-family: 'Raleway', sans-serif;
             -webkit-font-smoothing: antialiased;
             -moz-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
@@ -332,4 +330,3 @@ li .section-content > div {
             margin-bottom: 0.5rem;
         }
     }
-}

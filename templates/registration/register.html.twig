@@ -31,9 +31,10 @@
                     <div class="password">{{ form_row(registrationForm.plainPassword, {
                         label: 'Mot de passe'
                     }) }}</div>
-                    <div class="condition">{{ form_row(registrationForm.agreeTerms)}}
+                    <div class="condition">
                         <label for="conditions"><a href="{{ path('CGU') }}">Les conditions d'utilisation du service </a></label>
                     </div>
+                    {{ form_row(registrationForm.agreeTerms)}}
 
                     <button type="submit" class="btn"> S'inscrire </button>
                 {{ form_end(registrationForm) }}

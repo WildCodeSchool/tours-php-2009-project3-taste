@@ -46,11 +46,10 @@ main {
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
-    background: url('../images/IMG_20201112_102958_resized_20210202_034219768.jpg') no-repeat center;
+    background: url('../images/IMG_20201112_102958_resized_20210202_034219768.jpg') no-repeat top;
     background-size: cover;
     min-height: 850px;
     margin-bottom: 50px;
-    background-position: bottom;
 }
 .text-1 {
     display: flex;
@@ -91,7 +90,7 @@ main {
     align-items: flex-end;
     background: url('../images/IMG_5063.JPG') no-repeat center ;
     background-size: cover;
-    height: 400px;
+    height: 850px;
     margin-bottom: 50px;
     border: solid 1px black;
 }
@@ -121,7 +120,7 @@ main {
     align-items: flex-end;
     background: url('../images/IMG_20191221_191115_resized_20210202_034118068.jpg') no-repeat center ;
     background-size: cover;
-    height: 500px;
+    height: 850px;
     border: solid 1px black;
 }
 

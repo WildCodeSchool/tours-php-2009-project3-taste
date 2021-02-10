@@ -4,7 +4,7 @@
   align-items: center;
   justify-content: center;
   z-index: 10;
-  background: url('/images/caterer/image--002.jpg') no-repeat fixed center;
+  background: url('/images/caterer/image--002.jpg') no-repeat fixed center, #95ac009a;
   min-height: 850px;
   background-size: cover;
   box-shadow: 10px 10px 19px -5px rgba(0,0,0,0.6);
@@ -28,16 +28,33 @@
   text-align: center;
 }
 
+header {
+  background-color: #93AB00;
+  margin: 0;
+}
+
+main {
+  background-color: #93AB00;
+}
+
+.user-heading {
+  width: 100%;
+}
+
 .profile-block{
-  margin:30px auto;
   position:relative;
   overflow:hidden;
-  width: 80%;
+  width: 100%;
+  margin-top: -21px;
 }
 
 .history {
-  background-color: grey;
+  background-color: #95ac009a;
   width: 100%;
+}
+
+.panel {
+  border: none;
 }
 
 table {
@@ -45,15 +62,14 @@ table {
 }
 
 .history td, .history th {
-  border: 1px solid #ddd;
-  border-top: none;
+  border: none;
   padding: 8px;
   color: white;
 }
 
-.history tr:nth-child(even){background-color: #f2f2f2;}
+.history tr:nth-child(odd){background-color: #768a00; z-index: 100}
 
-.history tr:hover {background-color: #ddd;}
+.history tr:hover {background-color: rgb(230, 150, 1);}
 
 .history th {
   padding-top: 12px;
@@ -65,7 +81,6 @@ table {
 
 .profile-block .user-heading {
   background: #94AC00 none repeat scroll 0 0;
-  border-radius: 4px 4px 0 0;
   color: #fff;
   padding: 20px;
   text-align: center;
@@ -93,6 +108,7 @@ table {
   line-height: 30px;
   margin-top: 0;
 }
+
 .profile-block .nav > li > a {
   background: #94AC00;
   border-radius: 0;
@@ -112,7 +128,17 @@ table {
 .profile-block ul > li > a:hover,
 .profile-block ul > li > a:focus,
 .profile-block ul li.active a {
-  background: #768a00 !important;
+  background: rgb(230, 150, 1) !important;
   border-radius: 0;
   color: white !important;
+}
+
+.page a {
+  text-decoration: none;
+  color: white;
+}
+
+.page a:hover {
+  text-decoration: underline;
+  color: black;
 }

@@ -1,9 +1,11 @@
 @import 'variables.css';
+@import 'fontFamily.css';
 
 main {
-    font-family: "Open Sans", sans-serif;
-    height: 100%;
-    color: var(--color-text-nav);
+    font-family: 'Raleway', sans-serif;
+    height: 100vh;
+    background: url('../images/login.jpeg') no-repeat fixed center;
+    background-size: cover;
 }
 
 @keyframes button {

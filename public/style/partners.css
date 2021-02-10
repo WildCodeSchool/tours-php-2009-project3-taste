@@ -1,4 +1,5 @@
 @import 'variables.css';
+@import 'fontFamily.css';
 
 
 /* Design */
@@ -23,7 +24,7 @@
 .home-title {
   padding: 100px;
   text-align: center;
-  font-family: 'Arial';
+  font-family: 'Raleway', sans-serif;
   color: var(--color-title-header);
   background: var(--title-background-color) fixed center;
   background-size: cover;
@@ -32,34 +33,37 @@
   z-index: 10;
 }
 
+body{
+  background-color: #99b63b;
+}
 /* Body */
 .partner-body{
+  font-family: 'Raleway', sans-serif;
   max-width: 1200px;
   margin: 0 auto;
-  background-color: var(--main-partner-color);
+  background-color: whitesmoke;
   color: var(--primary-partner-color);
-  font-family: 'Arial';
   font-style: normal;
-  font-weight: 500;
-  padding: 1rem;
+  padding: 2.5rem;
   text-align: justify;
 }
 
-.partners-title {
-    font-size: 32px;
-    font-weight: 400;
-    font-weight: bold;
-    text-align: center;
+ .partner-body > p{
+  font-family: 'Raleway', sans-serif;
+  padding-left: 3rem;
+  padding-right: 3rem;
 }
 
+
+
 .card-img{
-  width: 400px;
-  height: 300px;
+  width: 46vh;
+  height: 30vh;
   vertical-align: middle;
 }
 
 .btn {
-  color: var(--main-partner-color);
+  color: var(--color-text-nav);
   padding: 0.8rem;
   font-size: 14px;
   text-transform: uppercase;
@@ -68,12 +72,12 @@
   display: block;
   width: 100%;
   cursor: pointer;
-  border: 1px solid var(--secondary-partner-color);
-  background: transparent;
+  border: 1px solid var(--color-text-nav);
+  background-color: var(--nav-background-color);
 }
 
 .btn:hover {
-  background-color: var(--secondary-partner-color);
+  background-color: #a2c433;
 }
 
 .cards {
@@ -81,7 +85,7 @@
   flex-wrap: wrap;
   list-style: none;
   margin: 0;
-  padding: 0;
+  padding: 1.5rem;
 }
 
 .cards_item {
@@ -89,7 +93,13 @@
   padding: 1rem;
 }
 
-@media (min-width: 40rem) {
+@media screen and (min-width: 36rem) {
+  .cards_item {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 40rem) {
   .cards_item {
     width: 50%;
   }
@@ -97,13 +107,13 @@
 
 @media (min-width: 56rem) {
   .cards_item {
-    width: 33.3333%;
+    width: 33.33%;
   }
 }
 
 .card {
   background-color: var(--main-partner-color);
-  border-radius: 0.5rem;
+  border-radius: 1rem;
   box-shadow: 0 20px 40px -14px var(--shadow-color);
   display: flex;
   flex-direction: column;
@@ -111,28 +121,28 @@
 }
 
 .card_content {
+  font-family: 'Raleway', sans-serif;
   padding: 1rem;
-  background: linear-gradient(to bottom left, grey 40%, grey 100%);
+  background-color: #ccc;
 }
 
 .card_title {
-  color: var(--main-partner-color);
+  color: var(--color-text-nav);
   font-size: 24px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  text-transform: capitalize;
-  margin: 0px;
+  font-style: italic;
+  text-align: center;
 }
 
 .card_text {
-  color: var(--main-partner-color);
+  color: var(--color-text-nav);
   font-size: 16px;
-  line-height: 1.5;
   margin-bottom: 1.25rem;
-  font-weight: 400;
+  padding: 1.25rem;
+  text-align: justify;
 }
 
 .card:hover{
     transform: scale(1.02);
+    transition: 0.6s;
     box-shadow: 0 4px 6px 0 var(--main-partner-color);
 }

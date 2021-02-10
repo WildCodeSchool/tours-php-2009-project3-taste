@@ -34,10 +34,14 @@
                     <tbody>
                     {% for order in orders %}
                         <tr>
+                            <td>#{{ order.id }}</td>
+                            <td>
+                                <ul class="list-group">
                             {% for item in order.cart %}
-                                <td>#{{ order.id }}</td>
-                                <td>{{ item.product.name }}</td>
+                                        <li class="list-group-item text-dark">{{ item.product.name }} x {{ item.quantity }}</li>
                             {% endfor %}
+                                </ul>
+                            </td>
                             <td>{{ order.hours|date("d/m/Y H:i") }}</td>
                             <td>{{ order.priceTotal }}€</td>
                         </tr>

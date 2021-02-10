@@ -6,6 +6,7 @@ use App\Entity\Click;
 use App\Form\ClickEditType;
 use App\Form\ProductClickType;
 use App\Repository\ClickRepository;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\File\Exception\FileException;
 use Symfony\Component\HttpFoundation\Request;
@@ -23,17 +24,16 @@ class ProductClickController extends AbstractController
      * @Route("/new", name="new", methods={"GET","POST"})
      * @param Request $request
      * @param SluggerInterface $slugger
+     * @param EntityManagerInterface $entityManager
      * @return Response
      */
-    public function new(Request $request, SluggerInterface $slugger): Response
+    public function new(Request $request, SluggerInterface $slugger, EntityManagerInterface $entityManager): Response
     {
         $productClick = new Click();
         $form = $this->createForm(ProductClickType::class, $productClick);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $entityManager = $this->getDoctrine()->getManager();
-
             $imageFile = $form->get('image')->getData();
 
             if ($imageFile) {
@@ -79,15 +79,16 @@ class ProductClickController extends AbstractController
      * @Route("/{id}/edit", name="edit", methods={"GET","POST"})
      * @param Request $request
      * @param Click $productClick
+     * @param EntityManagerInterface $entityManager
      * @return Response
      */
-    public function edit(Request $request, Click $productClick): Response
+    public function edit(Request $request, Click $productClick, EntityManagerInterface $entityManager): Response
     {
         $form = $this->createForm(ClickEditType::class, $productClick);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $this->getDoctrine()->getManager()->flush();
+            $entityManager->flush();
 
             return $this->redirectToRoute('admin_click_index');
         }
@@ -102,16 +103,16 @@ class ProductClickController extends AbstractController
      * @Route("/{id}", name="delete", methods={"DELETE"})
      * @param Request $request
      * @param Click $productClick
+     * @param EntityManagerInterface $entityManager
      * @return Response
      */
-    public function delete(Request $request, Click $productClick): Response
+    public function delete(Request $request, Click $productClick, EntityManagerInterface $entityManager): Response
     {
         if ($this->isCsrfTokenValid('delete' . $productClick->getId(), $request->request->get('_token'))) {
             $filename = $productClick->getImage();
             $path = $this->getParameter('upload_dir') . '/' . $filename;
             unlink($path);
 
-            $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($productClick);
             $entityManager->flush();
         }

@@ -18,7 +18,7 @@ $primary: darken(#428bca, 20%);
 .home-title {
   padding: 100px;
   text-align: center;
-  font-family: 'Inconsolata', monospace;
+  font-family: 'Raleway', sans-serif;
   color: var(--color-title-header);
   background: var(--title-background-color) fixed center;
   background-size: cover;
@@ -46,6 +46,7 @@ $pink: #ee9cb4;
 }
 
 body {
+  font-family: 'Raleway', sans-serif;
   background-color: darken($color: #BADA55, $amount: 20%);
   font-size: 100%;
 }

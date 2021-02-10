@@ -1,4 +1,5 @@
 @import 'variables.css';
+@import 'fontFamily.css';
 
 /* Image background in header */
 .image-title {
@@ -15,7 +16,7 @@
 .home-title {
     padding: 100px;
     text-align: center;
-    font-family: 'Inconsolata', monospace;
+    font-family: 'Raleway', sans-serif;
     color: var(--color-title-header);
     background: var(--title-background-color) fixed center;
     background-size: cover;
@@ -25,6 +26,7 @@
 }
 
 .title, .subtitle {
+    font-family: 'Raleway', sans-serif;
     text-align: center;
 }
 
@@ -34,6 +36,7 @@
 }
 
 .text {
+    font-family: 'Raleway', sans-serif;
     text-align: justify;
     margin-left: 2em;
     margin-right: 2em;

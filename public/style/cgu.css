@@ -43,6 +43,8 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        z-index: 10;
         background: url('../images/Restaurant.jpeg') no-repeat fixed center;
+        background-size: 100% 100%;
     }
 }

@@ -46,5 +46,6 @@
         align-items: center;
         justify-content: center;
         background: url('../images/Restaurant.jpeg') no-repeat fixed center;
+        background-size: 100% 100%;
     }
 }

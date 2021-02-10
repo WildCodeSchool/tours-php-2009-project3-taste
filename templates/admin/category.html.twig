@@ -48,9 +48,8 @@
                     <td>{{ category.minPrice }}</td>
                     <td>{{ category.maxPrice }}</td>
                     <td>
-                        <a href="{{ path('category_show', {'id': category.id}) }}">show</a>
                         {{ include('category/_delete_form.html.twig') }}
-                        <a href="{{ path('category_edit', {'id': category.id}) }}">edit</a>
+                        <a href="{{ path('category_edit', {'id': category.id}) }}">Editer</a>
                     </td>
                 </tr>
             {% else %}

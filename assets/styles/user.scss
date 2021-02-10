@@ -69,8 +69,6 @@ table {
 
 .history tr:nth-child(odd){background-color: #768a00; z-index: 100}
 
-.history tr:hover {background-color: rgb(230, 150, 1);}
-
 .history th {
   padding-top: 12px;
   padding-bottom: 12px;
@@ -78,6 +76,13 @@ table {
   background-color: #94AC00;
   color: white;
 }
+
+.list-group-item {
+  background-color: rgb(230, 150, 1);
+  border: none;
+}
+
+
 
 .profile-block .user-heading {
   background: #94AC00 none repeat scroll 0 0;

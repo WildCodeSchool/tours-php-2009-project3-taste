@@ -1,0 +1,23 @@
+<div class="container">
+    {{ form_start(form, {'attr' : {'id' : 'contact'}}) }}
+    <h3>Ajout d'un produit Click&Collect</h3>
+    <h4>* Champs Obligatoires</h4>
+    <fieldset>
+        <fieldset>
+            {{ form_label(form.name) }}
+            {{ form_widget(form.name) }}
+        </fieldset>
+        <fieldset>
+            {{ form_label(form.price) }}
+            {{ form_widget(form.price) }}
+        </fieldset>
+        <fieldset>
+            {{ form_label(form.category) }}
+            {{ form_widget(form.category) }}
+        </fieldset>
+        <fieldset>
+            <button class="btn" type="submit">{{ button_label|default('Enregistrer') }}</button>
+        </fieldset>
+        <a href="{{ path('admin_click_index') }}">Retour</a>
+        {{ form_end(form) }}
+</div>

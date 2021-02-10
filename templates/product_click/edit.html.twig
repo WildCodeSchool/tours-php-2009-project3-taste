@@ -1,11 +1,13 @@
 {% extends 'base.html.twig' %}
 
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ '/style/formAdmin.css' }}">
+{% endblock %}
+
 {% block title %}Edit ProductClick{% endblock %}
 
 {% block body %}
-    <h1>Editer un produit Click & Collect</h1>
 
-    {{ include('product_click/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
+    {{ include('product_click/_form_edit.html.twig', {'button_label': 'Mettre à jour'}) }}
 
-    <a href="{{ path('admin_click_index') }}">Retour à l'Administration</a>
 {% endblock %}

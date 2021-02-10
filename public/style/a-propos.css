@@ -39,3 +39,13 @@
     margin-right: 2em;
     margin-bottom: 1em;
 }
+
+@media screen and (max-width: 1000px) {
+    .image-title {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: url('../images/Restaurant.jpeg') no-repeat fixed center;
+        background-size: 100% 100%;
+    }
+}

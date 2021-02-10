@@ -45,9 +45,8 @@
                     <td>{{ click.price }}</td>
                     <td>{{ click.category }}</td>
                     <td>
-                        <a href="{{ path('click_show', {'id': click.id}) }}">show</a>
                         {{ include('product_click/_delete_form.html.twig') }}
-                        <a href="{{ path('click_edit', {'id': click.id}) }}">edit</a>
+                        <a href="{{ path('click_edit', {'id': click.id}) }}">Editer</a>
                     </td>
                 </tr>
             {% else %}

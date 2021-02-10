@@ -37,3 +37,14 @@
     text-align: justify;
     margin: 1em 2em;
 }
+
+@media screen and (max-width: 1000px) {
+    .image-title {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 10;
+        background: url('../images/Restaurant.jpeg') no-repeat fixed center;
+        background-size: 100% 100%;
+    }
+}

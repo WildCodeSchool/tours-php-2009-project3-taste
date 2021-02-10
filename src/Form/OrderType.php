@@ -14,7 +14,7 @@ class OrderType extends AbstractType
     {
         $builder
             ->add('hours', DateTimeType::class, [
-                'widget' => 'single_text',
+                'widget' => 'choice',
                 'attr' => ['placeholder' => 'année-mois-jour heure:minute'],
                 'label' => false,
             ]);

@@ -1,13 +1,11 @@
 {% extends 'base.html.twig' %}
 
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ '/style/formAdmin.css' }}">
+{% endblock %}
+
 {% block title %}New Category{% endblock %}
 
 {% block body %}
-    <h1>Create new Category</h1>
-
     {{ include('category/_form.html.twig') }}
-
-    <p><em>* Champs Obligatoires</em></p>
-
-    <a href="{{ path('admin_category') }}">back to list</a>
 {% endblock %}

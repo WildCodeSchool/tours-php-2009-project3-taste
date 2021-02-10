@@ -1,4 +1,27 @@
-{{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
-{{ form_end(form) }}
+<div class="container">
+    {{ form_start(form, {'attr' : {'id' : 'contact'}}) }}
+    <h3>Ajout d'une catégorie à la carte</h3>
+    <h4>* Champs Obligatoires</h4>
+    <fieldset>
+        {{ form_label(form.name) }}
+        {{ form_widget(form.name) }}
+    </fieldset>
+    <fieldset>
+        {{ form_label(form.description) }}
+        {{ form_widget(form.description) }}
+    </fieldset>
+    <fieldset>
+        {{ form_label(form.minPrice) }}
+        {{ form_widget(form.minPrice) }}
+    </fieldset>
+    <fieldset>
+        {{ form_label(form.maxPrice) }}
+        {{ form_widget(form.maxPrice) }}
+    </fieldset>
+    <fieldset>
+        <button class="btn" type="submit">{{ button_label|default('Save') }}</button>
+    </fieldset>
+    <a href="{{ path('admin_product') }}">Retour</a>
+
+    {{ form_end(form) }}
+</div>

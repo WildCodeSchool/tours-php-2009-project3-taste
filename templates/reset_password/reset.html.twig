@@ -1,12 +1,16 @@
 {% extends 'base.html.twig' %}
 
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ '/style/formAdmin.css' }}">
+{% endblock %}
+
 {% block title %}Réinitialisez votre Mot de Passe{% endblock %}
 
 {% block body %}
-    <h1>Réinitialisez votre Mot de Passe</h1>
-
-    {{ form_start(resetForm) }}
+<div class="container">
+    {{ form_start(resetForm, {'attr' : {'id' : 'contact'}}) }}
         {{ form_row(resetForm.plainPassword) }}
-        <button class="btn btn-primary">Réinitialisez votre Mot de Passe</button>
+        <button class="btn btn-primary" type="submit">Réinitialisez votre Mot de Passe</button>
     {{ form_end(resetForm) }}
+</div>
 {% endblock %}

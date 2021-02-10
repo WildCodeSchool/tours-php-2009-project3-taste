@@ -12,18 +12,15 @@
 
 {% block headerTitle %}
     <div class="home-title">
-        <h1>Bienvenue sur votre profil</h1>
-        <h2>{{ user.name }}</h2>
+        <h1>Historique de vos commandes</h1>
     </div>
 {% endblock %}
 
 {% block main %}
     <div class="profile-block">
-        <div class="panel text-center">
-            <div class="user-heading">
-                <h1>{{ user.name }}</h1>
-                <p>{{ user.email }}</p>
-            </div>
+            <ul class="nav nav-pills nav-stacked">
+                <li><a href="{{ path('profil_index') }}"><i class="fa fa" aria-hidden="true"></i>Retour au profil</a></li>
+            </ul>
             <div class="history">
                 <table>
                     <thead>
@@ -35,7 +32,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                    {% for order in user.orders %}
+                    {% for order in orders %}
                         <tr>
                             {% for item in order.cart %}
                                 <td>#{{ order.id }}</td>
@@ -48,11 +45,8 @@
                     </tbody>
                 </table>
             </div>
-            <ul class="nav nav-pills nav-stacked">
-                <li><a href="{{ path('profil_index') }}"><i class="fa fa" aria-hidden="true"></i>Retour au profil</a></li>
-            </ul>
         </div>
-    </div>
+    {{ knp_pagination_render(orders) }}
 {% endblock %}
 
 {% block javascipt %}

@@ -23,7 +23,7 @@
 .home-title {
   padding: 100px;
   text-align: center;
-  font-family: 'Inconsolata', monospace;
+  font-family: 'Raleway', sans-serif;
   color: var(--color-title-header);
   background: var(--title-background-color) fixed center;
   background-size: cover;
@@ -34,7 +34,8 @@
 
 /* Body */
 body {
-  background-color: var(--body-background-color);
+  font-family: 'Raleway', sans-serif;
+  background-color: #99b63b;
 }
 
 /* Cart Btn*/

@@ -104,7 +104,7 @@ class AdminPageController extends AbstractController
     }
 
     /**
-     * @Route("/click", name="click_index", methods={"GET"})
+     * @Route("/click", name="click", methods={"GET"})
      * @param Request $request
      * @param ClickRepository $clickRepository
      * @param PaginatorInterface $paginator

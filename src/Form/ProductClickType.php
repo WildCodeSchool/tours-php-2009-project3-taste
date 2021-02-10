@@ -19,7 +19,8 @@ class ProductClickType extends AbstractType
                 'label' => 'Nom*'
             ])
             ->add('image', FileType::class, [
-                'label' => 'Image*'
+                'label' => 'Image*',
+                'data_class' => null,
             ])
             ->add('price', MoneyType::class, [
                 'label' => 'Prix*'

@@ -20,8 +20,6 @@ main {
     background-image: url('../images/IMG_5060.JPG');
 
     /* Add the blur effect */
-    filter: blur(2px);
-    -webkit-filter: blur(2px);
 
     /* Full height */
     height: 100vh;

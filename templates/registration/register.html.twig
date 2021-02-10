@@ -2,7 +2,8 @@
 
 {% block stylesheets %}
     <link href="{{ 'style/footer.css' }}" rel="stylesheet">
-    {# <link href="{{ 'style/nav.css' }}" rel="stylesheet"> #}
+    <link href="{{ 'style/nav.css' }}" rel="stylesheet">
+    <link href="{{ 'style/registration.css' }}" rel="stylesheet">
 {% endblock %}
 
 {% block title %}Taste - Inscription{% endblock %}
@@ -17,24 +18,27 @@
     </header>
     <main>
         {% block main %}
-        {% for flashError in app.flashes('verify_email_error') %}
-            <div class="alert alert-danger" role="alert">{{ flashError }}</div>
-        {% endfor %}
+        <div class="wrapper">
+            <div class="registration">
+                {% for flashError in app.flashes('verify_email_error') %}
+                    <div class="alert alert-danger" role="alert">{{ flashError }}</div>
+                {% endfor %}
+                <h1 class="title">Inscription</h1>
 
-        <h1>Inscription</h1>
+                {{ form_start(registrationForm) }}
+                    <div class="name">{{ form_row(registrationForm.name) }}</div>
+                    <div class="email">{{ form_row(registrationForm.email) }}</div>
+                    <div class="password">{{ form_row(registrationForm.plainPassword, {
+                        label: 'Mot de passe'
+                    }) }}</div>
+                    <div class="condition">{{ form_row(registrationForm.agreeTerms)}}
+                        <label for="conditions"><a href="{{ path('CGU') }}">Les conditions d'utilisation du service </a></label>
+                    </div>
 
-        {{ form_start(registrationForm) }}
-            {{ form_row(registrationForm.name) }}
-            {{ form_row(registrationForm.email) }}
-            {{ form_row(registrationForm.plainPassword, {
-                label: 'Mot de passe'
-            }) }}
-            <label for="conditions"><a href="{{ path('CGU') }}"> J'accepte les conditions d'utilisation du service </a></label>
-            {{ form_row(registrationForm.agreeTerms) }}
-
-
-            <button type="submit" class="btn"> S'inscrire </button>
-        {{ form_end(registrationForm) }}
+                    <button type="submit" class="btn"> S'inscrire </button>
+                {{ form_end(registrationForm) }}
+            </div>
+        </div>
         {% endblock %}
     </main>
     {% include "_footer.html.twig" %}

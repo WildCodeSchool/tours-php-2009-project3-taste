@@ -9,6 +9,7 @@ footer {
     bottom: 0;
 }
 .contenuFooter {
+    font-family: 'Raleway', sans-serif;
     margin: 0 auto;
     display: flex;
     justify-content: center;
@@ -72,7 +73,8 @@ footer {
     padding-top: 15px;
 }
 .listSociaux li {
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
     align-items: center;
 }
 

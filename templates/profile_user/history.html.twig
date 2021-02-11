@@ -3,23 +3,25 @@
 {% block stylesheets %}
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href="{{ 'style/footer.css' }}" rel="stylesheet">
-    <link href="{{ 'style/nav.css' }}" rel="stylesheet">
+    <link href="{{ '/style/footer.css' }}" rel="stylesheet">
+    <link href="{{ '/style/nav.css' }}" rel="stylesheet">
     {{ encore_entry_link_tags('user') }}
 {% endblock %}
 
-{% block title %}Hello ProfileUserController!{% endblock %}
+{% block title %}Historique des commandes{% endblock %}
 
-
+{% block headerTitle %}
+    <div class="home-title">
+        <h1>Historique de vos commandes</h1>
+    </div>
+{% endblock %}
 
 {% block main %}
     <div class="profile-block">
-        <div class="panel text-center">
-            <div class="user-heading"> <a href="#"><img src="http://cumbrianrun.co.uk/wp-content/uploads/2014/02/default-placeholder-300x300.png" alt="" title=""></a>
-                <h1>{{ user.name }}</h1>
-                <p>{{ user.email }}</p>
-            </div>
-            <div>
+            <ul class="nav nav-pills nav-stacked">
+                <li><a href="{{ path('profil_index') }}"><i class="fa fa" aria-hidden="true"></i>Retour au profil</a></li>
+            </ul>
+            <div class="history">
                 <table>
                     <thead>
                         <tr>
@@ -30,12 +32,16 @@
                         </tr>
                     </thead>
                     <tbody>
-                    {% for order in user.orders %}
+                    {% for order in orders %}
                         <tr>
+                            <td>#{{ order.id }}</td>
+                            <td>
+                                <ul class="list-group">
                             {% for item in order.cart %}
-                                <td>#{{ order.id }}</td>
-                                <td>{{ item.product.name }}</td>
+                                        <li class="list-group-item text-dark">{{ item.product.name }} x {{ item.quantity }}</li>
                             {% endfor %}
+                                </ul>
+                            </td>
                             <td>{{ order.hours|date("d/m/Y H:i") }}</td>
                             <td>{{ order.priceTotal }}€</td>
                         </tr>
@@ -43,11 +49,9 @@
                     </tbody>
                 </table>
             </div>
-            <ul class="nav nav-pills nav-stacked">
-                <li><a href="{{ path('profile') }}"><i class="fa fa" aria-hidden="true"></i>Retour au profil</a></li>
-                <li><a href="{{ path('app_logout') }}"><i class="fa fa-sign-out"></i>Se déconnecter</a></li>
-            </ul>
         </div>
+    <div class="page">
+       {{ knp_pagination_render(orders) }}
     </div>
 {% endblock %}
 

@@ -1,0 +1,26 @@
+
+body {
+    font-weight: 100;
+    font-size: 12px;
+    line-height: 30px;
+    color: #777;
+    background-color: #7386D5;
+}
+
+.container {
+    max-width: 400px;
+    width: 100%;
+    background-color: white;
+    color: black;
+    font-size: 30px;
+    padding: 100px;
+    -webkit-box-shadow: 21px 21px 15px -4px rgba(0,0,0,0.75);
+    -moz-box-shadow: 21px 21px 15px -4px rgba(0,0,0,0.75);
+    box-shadow: 21px 21px 15px -4px rgba(0,0,0,0.75);
+    text-align: center;
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+}

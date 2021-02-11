@@ -15,10 +15,19 @@ class ProductClickType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('name', TextType::class)
-            ->add('image', FileType::class)
-            ->add('price', MoneyType::class)
-            ->add('category', TextType::class)
+            ->add('name', TextType::class, [
+                'label' => 'Nom*'
+            ])
+            ->add('image', FileType::class, [
+                'label' => 'Image*',
+                'data_class' => null,
+            ])
+            ->add('price', MoneyType::class, [
+                'label' => 'Prix*'
+            ])
+            ->add('category', TextType::class, [
+                'label' => 'Catégorie*'
+            ])
         ;
     }
 

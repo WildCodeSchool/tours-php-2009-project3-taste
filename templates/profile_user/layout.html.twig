@@ -4,13 +4,12 @@
     {% block menu %} {% endblock %}
     <header>
         <div class="image-title">
-            {% include "_nav.html.twig" %}
+            {% include '_nav.html.twig' %}
             {% block headerTitle %}{% endblock %}
         </div>
-        <hr>
     </header>
     <main>
         {% block main %}{% endblock %}
     </main>
-    {% include "_footer.html.twig" %}
+    {% include '_footer.html.twig' %}
 {% endblock %}

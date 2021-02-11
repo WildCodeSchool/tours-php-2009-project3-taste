@@ -6,8 +6,10 @@ use App\Entity\Click;
 use App\Form\ClickEditType;
 use App\Form\ProductClickType;
 use App\Repository\ClickRepository;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\File\Exception\FileException;
+use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -23,17 +25,16 @@ class ProductClickController extends AbstractController
      * @Route("/new", name="new", methods={"GET","POST"})
      * @param Request $request
      * @param SluggerInterface $slugger
+     * @param EntityManagerInterface $entityManager
      * @return Response
      */
-    public function new(Request $request, SluggerInterface $slugger): Response
+    public function new(Request $request, SluggerInterface $slugger, EntityManagerInterface $entityManager): Response
     {
         $productClick = new Click();
         $form = $this->createForm(ProductClickType::class, $productClick);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $entityManager = $this->getDoctrine()->getManager();
-
             $imageFile = $form->get('image')->getData();
 
             if ($imageFile) {
@@ -48,13 +49,13 @@ class ProductClickController extends AbstractController
                     );
                 } catch (FileException $e) {
                 }
-                $productClick->setImage($newImageFile);
+                $productClick->setImage("uploads/" . $newImageFile);
             }
             $entityManager->persist($productClick);
             $entityManager->flush();
 
             $this->addFlash('success', 'Image ajouté avec Succès');
-            return $this->redirectToRoute('admin_click_index');
+            return $this->redirectToRoute('admin_click');
         }
 
         return $this->render('product_click/new.html.twig', [
@@ -79,17 +80,21 @@ class ProductClickController extends AbstractController
      * @Route("/{id}/edit", name="edit", methods={"GET","POST"})
      * @param Request $request
      * @param Click $productClick
+     * @param EntityManagerInterface $entityManager
      * @return Response
      */
-    public function edit(Request $request, Click $productClick): Response
+    public function edit(Request $request, Click $productClick, EntityManagerInterface $entityManager): Response
     {
         $form = $this->createForm(ClickEditType::class, $productClick);
+        $productClick->setImage(
+            new File($productClick->getImage())
+        );
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $this->getDoctrine()->getManager()->flush();
+            $entityManager->flush();
 
-            return $this->redirectToRoute('admin_click_index');
+            return $this->redirectToRoute('admin_click');
         }
 
         return $this->render('product_click/edit.html.twig', [
@@ -102,20 +107,18 @@ class ProductClickController extends AbstractController
      * @Route("/{id}", name="delete", methods={"DELETE"})
      * @param Request $request
      * @param Click $productClick
+     * @param EntityManagerInterface $entityManager
      * @return Response
      */
-    public function delete(Request $request, Click $productClick): Response
+    public function delete(Request $request, Click $productClick, EntityManagerInterface $entityManager): Response
     {
         if ($this->isCsrfTokenValid('delete' . $productClick->getId(), $request->request->get('_token'))) {
-            $filename = $productClick->getImage();
-            $path = $this->getParameter('upload_dir') . '/' . $filename;
-            unlink($path);
+            unlink($productClick->getImage());
 
-            $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($productClick);
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('admin_click_index');
+        return $this->redirectToRoute('admin_click');
     }
 }

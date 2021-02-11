@@ -104,7 +104,7 @@ class AdminPageController extends AbstractController
     }
 
     /**
-     * @Route("/click", name="click_index", methods={"GET"})
+     * @Route("/click", name="click", methods={"GET"})
      * @param Request $request
      * @param ClickRepository $clickRepository
      * @param PaginatorInterface $paginator
@@ -148,7 +148,7 @@ class AdminPageController extends AbstractController
         $orders = $paginator->paginate(
             $donnes,
             $request->query->getInt('page', 1),
-            6
+            4
         );
         return $this->render('admin/order.html.twig', [
             'orders' => $orders

@@ -5,7 +5,7 @@
     {{ encore_entry_link_tags('caterer') }}
 {% endblock %}
 
-{% block title %}Artisan Traiteur{% endblock %}
+{% block title %}Taste - Artisan Traiteur{% endblock %}
 
 {% block headerTitle %}
     <div class="home-title">
@@ -19,27 +19,33 @@
     <div class="cocktail-caterer">
         <img src="/images/caterer/image--006.jpg" alt="place holder" width="50%">
         <div class="event">
-        <h2>Lorem ipsum</h2>
-        <p class="text"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eros orci, accumsan nec est in,
-            tempor lacinia leo. Sed placerat finibus felis, et efficitur magna euismod a. Sed vitae rhoncus. </p>
+        <h2>Un traiteur «SUR MESURE» basé à Tours</h2>
+        <p class="text"> Nous vous garantissons des produits frais de qualité, régionaux, au maximum à circuit court
+            et fait maisonpar nos soins à notre laboratoire de production, avec Savoir-faire et Passion.Toutes nos prestations
+            s’adaptent à vos évènements: séminaire, repas de fin d'année, mariage, baptême,anniversaire, soirée entre amis... </p>
         </div>
     </div>
 
     <div class="entree-caterer">
         <div class="event">
-        <h2>Lorem ipsum</h2>
-        <p class="text"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eros orci, accumsan nec est in,
-            tempor lacinia leo. Sed placerat finibus felis, et efficitur magna euismod a. Sed vitae rhoncus. </p>
+        <h2>Nos prestations</h2>
+        <p class="text"> Cocktail/buffet dinatoire,
+            Repas chaud ou froid à l’assiette (apéritifs, entrées, plats, fromages, desserts: composition au choix),
+            Repas buffet,
+            Plateaux repas individuels,
+            Livraison des produits de notre boutique restaurant par nos soins à partir de 10 personnes </p>
         </div>
-        <img src="/images/caterer/image--000.jpg" alt="place holder" width="50%">
+        <img src="/images/caterer/IMG_20191221_193512_resized_20210202_034121314.jpg" alt="place holder" width="50%">
     </div>
 
     <div class="plate-caterer">
-        <img src="/images/caterer/image--009.jpg" alt="place holder" width="50%">
+        <img src="/images/caterer/image--003.jpg" alt="place holder" width="50%">
         <div class="event">
-        <h2>Lorem ipsum</h2>
-        <p class="text"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eros orci, accumsan nec est in,
-            tempor lacinia leo. Sed placerat finibus felis, et efficitur magna euismod a. Sed vitae rhoncus. </p>
+        <h2>Formules</h2>
+        <p class="text">Service ou par vos soins «livraison et prêt de matériels»,
+            Installation salle/buffet/etc,
+             Nettoyage,
+            Location de matériels: tables/chaises/nappes/couverts/verres/barnum/location de salle  ou divers services.</p>
         </div>
     </div>
 
@@ -48,7 +54,7 @@
             <h1>DEMANDE DE DEVIS</h1>
         </div>
         <div class="row body">
-            {{ form_start(form) }}
+            {{ form_start(form,{"attr":{"id":"formcaterer"}}) }}
                 <div class="A">
                     {{ form_label(form.lastname) }}
                     {{ form_widget(form.lastname) }}

@@ -1,12 +1,16 @@
 {% extends 'base.html.twig' %}
 
+{% block stylesheets %}
+    <link href="{{ 'style/footer.css' }}" rel="stylesheet">
+    <link href="{{ 'style/nav.css' }}" rel="stylesheet">
+{% endblock %}
+
 {% block body %}
     <header>
         <div class="image-title">
             {% include "_nav.html.twig" %}
             {% block headerTitle %}{% endblock %}
         </div>
-        <hr>
     </header>
     <main>
         {% block main %}{% endblock %}

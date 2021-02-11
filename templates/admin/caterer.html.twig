@@ -37,6 +37,7 @@
                 <th>lieux</th>
                 <th>Inviter</th>
                 <th>Description</th>
+                <th>Actions</th>
             </tr>
             </thead>
             <tbody>
@@ -50,6 +51,7 @@
                     <td>{{ caterer.location }}</td>
                     <td>{{ caterer.guests }}</td>
                     <td>{{ caterer.description }}</td>
+                    <td>{{ include('caterer/_delete_form.html.twig') }}</td>
                 </tr>
             {% else %}
                 <tr>

@@ -1,4 +1,5 @@
 @import 'variables.css';
+@import 'fontFamily.css';
 
 /* Image background in header */
 .image-title {
@@ -6,7 +7,7 @@
     align-items: center;
     justify-content: center;
     z-index: 10;
-    background: url('../images/Restaurant.jpeg') no-repeat fixed center;
+    background: url('../images/20200625_104144.jpg') no-repeat fixed center;
     min-height: 850px;
     background-size: cover;
 }
@@ -15,7 +16,7 @@
 .home-title {
     padding: 100px;
     text-align: center;
-    font-family: 'Inconsolata', monospace;
+    font-family: 'Raleway', sans-serif;
     color: var(--color-title-header);
     background: var(--title-background-color) fixed center;
     background-size: cover;
@@ -23,9 +24,17 @@
     -webkit-backdrop-filter: blur(2px);
     z-index: 10;
 }
-
-.title, .subtitle {
-    text-align: center;
+body{
+    background-color:whitesmoke;
+}
+.title{
+    font-family: 'Raleway', sans-serif;
+}
+.subtitle {
+    font-family: 'Raleway', sans-serif;
+    color: #99b63b;
+    text-align: justify;
+    margin-left: 25px;
 }
 
 .subtitle {
@@ -34,6 +43,18 @@
 }
 
 .text, .definition {
+    font-family: 'Raleway', sans-serif;
     text-align: justify;
     margin: 1em 2em;
+}
+
+@media screen and (max-width: 1000px) {
+    .image-title {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 10;
+        background: url('../images/20200625_104144.jpg') no-repeat fixed center;
+        background-size: 100% 100%;
+    }
 }

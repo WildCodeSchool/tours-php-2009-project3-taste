@@ -87,7 +87,7 @@ main {
     display: flex;
     justify-content: flex-start;
     align-items: flex-end;
-    background: url('../images/IMG_5063.JPG') no-repeat center ;
+    background: url('../images/IMG_5063.jpg') no-repeat center ;
     background-size: cover;
     height: 850px;
     margin-bottom: 50px;

@@ -42,5 +42,6 @@ security:
     access_control:
     - { path: ^/admin, roles: ROLE_ADMIN }
     - { path: ^/product/, roles: ROLE_ADMIN }
+    - { path: ^/caterer/delete, roles: ROLE_ADMIN }
     - { path: ^/panier, roles: ROLE_USER }
     - { path: ^/profil, roles: ROLE_USER }

@@ -13,7 +13,6 @@ use Symfony\Component\Mailer\Exception\TransportExceptionInterface;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Mime\Email;
 use Symfony\Component\Routing\Annotation\Route;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
 class CatererController extends AbstractController
 {
@@ -53,12 +52,11 @@ class CatererController extends AbstractController
     }
 
     /**
-     * @Route("caterer/{id}", name="caterer_delete", methods={"DELETE"})
+     * @Route("caterer/delete/{id}", name="caterer_delete", methods={"DELETE"})
      * @param Request $request
      * @param Caterer $caterer
      * @param EntityManagerInterface $entityManager
      * @return Response
-     * @IsGranted("ROLE_ADMIN")
      */
     public function delete(Request $request, Caterer $caterer, EntityManagerInterface $entityManager): Response
     {

@@ -9,6 +9,7 @@ use App\Repository\ClickRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\File\Exception\FileException;
+use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -48,13 +49,13 @@ class ProductClickController extends AbstractController
                     );
                 } catch (FileException $e) {
                 }
-                $productClick->setImage($newImageFile);
+                $productClick->setImage("uploads/" . $newImageFile);
             }
             $entityManager->persist($productClick);
             $entityManager->flush();
 
             $this->addFlash('success', 'Image ajouté avec Succès');
-            return $this->redirectToRoute('admin_click_index');
+            return $this->redirectToRoute('admin_click');
         }
 
         return $this->render('product_click/new.html.twig', [
@@ -85,12 +86,15 @@ class ProductClickController extends AbstractController
     public function edit(Request $request, Click $productClick, EntityManagerInterface $entityManager): Response
     {
         $form = $this->createForm(ClickEditType::class, $productClick);
+        $productClick->setImage(
+            new File($productClick->getImage())
+        );
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager->flush();
 
-            return $this->redirectToRoute('admin_click_index');
+            return $this->redirectToRoute('admin_click');
         }
 
         return $this->render('product_click/edit.html.twig', [
@@ -109,14 +113,12 @@ class ProductClickController extends AbstractController
     public function delete(Request $request, Click $productClick, EntityManagerInterface $entityManager): Response
     {
         if ($this->isCsrfTokenValid('delete' . $productClick->getId(), $request->request->get('_token'))) {
-            $filename = $productClick->getImage();
-            $path = $this->getParameter('upload_dir') . '/' . $filename;
-            unlink($path);
+            unlink($productClick->getImage());
 
             $entityManager->remove($productClick);
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('admin_click_index');
+        return $this->redirectToRoute('admin_click');
     }
 }

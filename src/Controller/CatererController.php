@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Caterer;
 use App\Form\CatererType;
 use Doctrine\ORM\EntityManagerInterface;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
@@ -52,6 +53,7 @@ class CatererController extends AbstractController
      * @param Caterer $caterer
      * @param EntityManagerInterface $entityManager
      * @return Response
+     * @IsGranted("ROLE_ADMIN")
      */
     public function delete(Request $request, Caterer $caterer, EntityManagerInterface $entityManager): Response
     {

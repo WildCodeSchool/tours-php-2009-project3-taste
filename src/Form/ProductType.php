@@ -37,6 +37,9 @@ class ProductType extends AbstractType
                     'Soupe en hiver & Gaspachos en été' => 'Soupe en hiver & Gaspachos en été',
                     'Boisson sans alcool' => 'Boisson sans Alcool',
                     'Boisson alcoolisées' => 'Boisson alcoolisées',
+                    'Supplément' => 'Supplément',
+                    'Petites Salades composées' => 'Petites Salades composées',
+                    'Grandes Salades composées' => 'Grandes Salades composées',
                 ]
             ])
             ->add('groupDescription', TextType::class, [

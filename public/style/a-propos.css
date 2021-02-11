@@ -7,7 +7,7 @@
     align-items: center;
     justify-content: center;
     z-index: 10;
-    background: url('../images/Restaurant.jpeg') no-repeat fixed center;
+    background: url('../images/IMG_5061.JPG') no-repeat fixed center;
     min-height: 850px;
     background-size: cover;
 }
@@ -25,9 +25,14 @@
     z-index: 10;
 }
 
-.title, .subtitle {
+.title{
     font-family: 'Raleway', sans-serif;
-    text-align: center;
+} 
+.subtitle {
+    font-family: 'Raleway', sans-serif;
+    color: #99b63b;
+    text-align: justify;
+    margin-left: 25px;
 }
 
 .subtitle {
@@ -48,7 +53,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        background: url('../images/Restaurant.jpeg') no-repeat fixed center;
+        background: url('../images/IMG_5061.JPG') no-repeat fixed center;
         background-size: 100% 100%;
     }
 }

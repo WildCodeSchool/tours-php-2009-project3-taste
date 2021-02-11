@@ -13,6 +13,7 @@ use Symfony\Component\Mailer\Exception\TransportExceptionInterface;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Mime\Email;
 use Symfony\Component\Routing\Annotation\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
 class CatererController extends AbstractController
 {
@@ -36,6 +37,7 @@ class CatererController extends AbstractController
             $entityManager->persist($caterer);
             $entityManager->flush();
 
+
             $email = (new Email())
                 ->from('taste.mathieu@gmail.com')
                 ->to('taste.mathieu@gmail.com')
@@ -44,7 +46,10 @@ class CatererController extends AbstractController
             $mailer->send($email);
             return $this->redirectToRoute('index');
         }
-        return $this->render('caterer/caterer.html.twig', ["form" => $form->createView()]);
+        return $this->render('caterer/caterer.html.twig', [
+            "form" => $form->createView(),
+            "_fragment" => "formcaterer"
+        ]);
     }
 
     /**

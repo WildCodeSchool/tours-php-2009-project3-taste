@@ -18,13 +18,13 @@
     align-items: center;
     height: 74px;
     font-size: 22px;
-    background-color: var(--nav-background-color);
-    box-shadow: 0 2px 20px 5px rgba(94,94,94,1);
+    background-color: rgba(136, 132, 132, 0.8);
+    box-shadow: 0 2px 20px 5px rgba(0, 0, 0, .6);
 }
 
 .nav_bar a {
     text-decoration: none;
-    color: var(--color-text-nav);
+    color: white;
     transition: transform .5s;
     font-family: 'Raleway', sans-serif;
 }
